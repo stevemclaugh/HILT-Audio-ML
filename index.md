@@ -8,10 +8,32 @@ Participants will gain skills useful for using sound collections for a range of 
 
 Students should bring a laptop (any operating system) as well as headphones or earbuds. All tools used in this workshop are open source or free software. An audio corpus will be provided for the hands-on demo, but students should feel free to bring samples from collections they hope to explore. Experience recording or editing digital audio will be helpful but is not strictly necessary. No prior experience with Python or machine learning is required.
 
+## Class Sessions
+
+- [Day 1, Session 1](Day_1/Session_1.1.md)
+- [Day 1, Session 2](Day_1/Session_1.2.md)
+- [Day 1, Session 3](Day_1/Session_1.3.md)
+- [Day 1, Session 4](Day_1/Session_1.4.md)
+
+- [Day 2, Session 1](Day_2/Session_2.1.md)
+- [Day 2, Session 2](Day_2/Session_2.2.md)
+- [Day 2, Session 3](Day_2/Session_2.3.md)
+- [Day 2, Session 4](Day_2/Session_2.4.md)
+
+- [Day 3, Session 1](Day_3/Session_3.1.md)
+- [Day 3, Session 2](Day_3/Session_3.2.md)
+- [Day 3, Session 3](Day_3/Session_3.3.md)
+- [Day 3, Session 4](Day_3/Session_3.4.md)
+
+- [Day 4, Session 1](Day_1/Session_4.1.md)
+- [Day 4, Session 2](Day_1/Session_4.2.md)
+- [Day 4, Session 3](Day_1/Session_4.3.md)
+- [Day 4, Session 4](Day_1/Session_4.4.md)
+
 
 ## Getting started with Docker
 
-In case you're interested, here's a [nice overview](https://www.digitalocean.com/community/tutorials/docker-explained-using-dockerfiles-to-automate-building-of-images) of Docker syntax.
+In case you're interested, here's a [handy overview](https://www.digitalocean.com/community/tutorials/docker-explained-using-dockerfiles-to-automate-building-of-images) of Docker syntax.
 
 And here's a [cheat sheet](https://www.docker.com/sites/default/files/Docker_CheatSheet_08.09.2016_0.pdf) with basic Docker commands.
 
