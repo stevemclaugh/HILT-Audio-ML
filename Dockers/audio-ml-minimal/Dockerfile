@@ -12,8 +12,9 @@ MAINTAINER Steve McLaughlin <stephen.mclaughlin@utexas.edu>
 
 # Make sure ubuntu is up to date
 RUN apt-get update -y
-
 RUN apt-get install -y wget
+
+#ENV PYTHONWARNINGS="ignore:a true SSLContext object"
 
 # Install Tini
 RUN wget --quiet https://github.com/krallin/tini/releases/download/v0.10.0/tini && \
@@ -27,20 +28,20 @@ RUN add-apt-repository -y ppa:mc3man/trusty-media
 RUN apt-get update -y
 RUN apt-get install -y ffmpeg gstreamer0.10-ffmpeg
 
-RUN apt-get -y install python2.7 python-pip python-dev
+RUN apt-get -y install python python-pip python-dev libffi-dev libssl-dev
 RUN apt-get -y install ipython ipython-notebook
 RUN pip install --upgrade pip
-RUN apt-get install -y libffi-dev libssl-dev
 
+RUN pip install pyOpenSSL ndg-httpsclient pyasn1
 RUN pip install -U six==1.6.0
-RUN pip install requests==2.5.3
+RUN pip install 'requests[security]'
 
 RUN pip install -U jupyter numpy scipy matplotlib pandas
 
-RUN pip install -U sklearn=0.18 pydub tqdm requests
+RUN pip install -U sklearn pydub tqdm requests
 
 RUN pip install pyAudioAnalysis
-
+RUN pip install git+git://github.com/hipstas/audio-tagging-toolkit.git
 
 # Configure container startup
 ENTRYPOINT ["tini", "--"]
