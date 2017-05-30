@@ -1,1 +1,0 @@
-1 `basename "$file" .mp3`.wav; done

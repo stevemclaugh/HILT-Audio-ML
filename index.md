@@ -10,32 +10,58 @@ Students should bring a laptop (any operating system) as well as headphones or e
 
 ## Class Sessions
 
-[Day 1, Session 1](Day_1/Session_1.1.md) | [Day 1, Session 2](Day_1/Session_1.2.md) | [Day 1, Session 3](Day_1/Session_1.3.md) | [Day 1, Session 4](Day_1/Session_1.4.md)
+[Day 1, Session 1](#)(Day\_1/Session\_1.1.md) | [Day 1, Session 2](#)(Day\_1/Session\_1.2.md) | [Day 1, Session 3](#)(Day\_1/Session\_1.3.md) | [Day 1, Session 4](#)(Day\_1/Session\_1.4.md)
+[Day 2, Session 1](#)(Day\_2/Session\_2.1.md) | [Day 2, Session 2](#)(Day\_2/Session\_2.2.md) | [Day 2, Session 3](#)(Day\_2/Session\_2.3.md) | [Day 2, Session 4](#)(Day\_2/Session\_2.4.md)
+[Day 3, Session 1](#)(Day\_3/Session\_3.1.md) | [Day 3, Session 2](#)(Day\_3/Session\_3.2.md) | [Day 3, Session 3](#)(Day\_3/Session\_3.3.md) | [Day 3, Session 4](#)(Day\_3/Session\_3.4.md)
+[Day 4, Session 1](#)(Day\_1/Session\_4.1.md) | [Day 4, Session 2](#)(Day\_1/Session\_4.2.md) | [Day 4, Session 3](#)(Day\_1/Session\_4.3.md) | [Day 4, Session 4](#)(Day\_1/Session\_4.4.md)
 
 
-[Day 2, Session 1](Day_2/Session_2.1.md) | [Day 2, Session 2](Day_2/Session_2.2.md) | [Day 2, Session 3](Day_2/Session_2.3.md) | [Day 2, Session 4](Day_2/Session_2.4.md)
+### Group notepad (for sharing links etc.)
 
-
-[Day 3, Session 1](Day_3/Session_3.1.md) | [Day 3, Session 2](Day_3/Session_3.2.md) | [Day 3, Session 3](Day_3/Session_3.3.md) | [Day 3, Session 4](Day_3/Session_3.4.md)
-
-
-[Day 4, Session 1](Day_1/Session_4.1.md) | [Day 4, Session 2](Day_1/Session_4.2.md) | [Day 4, Session 3](Day_1/Session_4.3.md) | [Day 4, Session 4](Day_1/Session_4.4.md)
-
+- [https://etherpad.net/p/HILT-Audio-ML](https://etherpad.net/p/HILT-Audio-ML)
 
 
 ## Getting started with Docker
 
-In case you're interested, here's a [handy overview](https://www.digitalocean.com/community/tutorials/docker-explained-using-dockerfiles-to-automate-building-of-images) of Docker syntax.
 
-And here's a [cheat sheet](https://www.docker.com/sites/default/files/Docker_CheatSheet_08.09.2016_0.pdf) with basic Docker commands.
+Here's a general overview of [Docker for beginners](#)(https://prakhar.me/docker-curriculum/).
 
+And here's a [cheat sheet](#)(https://www.docker.com/sites/default/files/Docker\_CheatSheet\_08.09.2016\_0.pdf) with basic Docker commands.
+
+In case you're interested, here's a [handy overview](#)(https://docs.docker.com/engine/userguide/eng-image/dockerfile\_best-practices/) of best practices for creating Docker containers.
+
+
+View currently running docker containers:
+
+```bash
+`docker ps
+```
+\`
+Close and delete all currently running Docker containers:
 
 ```
-mkdir ~/Desktop/sharedfolder
-
-cd /path/to/Dockers
-
-docker build -t audioml ./
-
-docker run -it --name audio_ml_container -p 8888:8888 -v ~/Desktop/sharedfolder:/home/sharedfolder audioml
+`docker rm -f $(docker ps -aq)
 ```
+\`
+Launch Docker container for this course:
+
+```
+`mkdir /Desktop/sharedfolder
+
+docker pull stevemclaugh/audio-ml-notebook
+
+docker run -it --name audio_ml_container2 -p 8888:8888 -v /Desktop/sharedfolder:/home/sharedfolder stevemclaugh/audio-ml-notebook
+```
+\`
+You can view the Dockerfile we're using to build our container [here](#)(https://github.com/stevemclaugh/audio-ml-notebook/blob/master/Dockerfile).
+
+
+## Jupyter
+
+-   “The Jupyter Notebook.” [http://jupyter-notebook.readthedocs.io/en/latest/notebook.html](#)(http://jupyter-notebook.readthedocs.io/en/latest/notebook.html)
+
+
+## Running Python and other command-line tools on macOS
+
+If you're using macOS, see the following guide on getting up and running with bash and Python:
+- https://github.com/stevemclaugh/Python-Text-Workshop\_Northwestern\_2016/blob/Master/01\_Pre-Workshop\_OS-X.md
