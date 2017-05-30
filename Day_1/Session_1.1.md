@@ -1,6 +1,6 @@
-Day 1, Session 1
-9:30 – 10:45 am
-Intro Remarks
+# Day 1, Session 1
+### 9:30 – 10:45 am
+## Intro Remarks
 
 My philosophy: play and screwing around is a good way to learn
 
@@ -11,25 +11,25 @@ Just Goole the error code. If you find yourself getting actually angry, like emo
 
 
 
-Day 1
+## Day 1
 
-What this course isn't
+### What this course isn't
 - a course on statistics
 - a course on signal processing
 - an course on programming/Python
 - a course on state-of-the-art ML techniques
 
-What this course focuses on
+### What this course focuses on
 - finding, combining, and modifying existing tools
 - understanding sound as data
-  - the limits and possibilities of machine learning for sound collections
+- the limits and possibilities of machine learning for sound collections
 
 
 
 
-Advice at the outset
+### Advice at the outset
 - Curb your expectations. Don't expect quick results.
-- Frustration is natural. Push through it.
+ - Frustration is natural. Push through it.
 
 
 
@@ -83,34 +83,34 @@ Some of the things we're going to do this week are in a way pretty easy, even tr
 
 
 
-Install the following programs
+## Install the following programs
 
-Plaintext editor
+### Plaintext editor
 
 - Atom: https://atom.io/
 or
 - Geany: https://www.geany.org/
 
-Audio software
+### Audio software
 
 - Sonic Visualiser: http://www.sonicvisualiser.org/
 - VLC Media Player: http://www.videolan.org/vlc/
 - Praat (optional): http://www.fon.hum.uva.nl/praat/
 
-Install Docker on Mac
+### Install Docker on Mac
 
 - Docker Community Edition: https://store.docker.com/search?type=edition&offering=community
 
 - Install Docker Toolbox (optional): https://www.docker.com/products/docker-toolbox
 
 
-Install Docker on Windows
+### Install Docker on Windows
 
 - Install Docker Toolbox: https://www.docker.com/products/docker-toolbox
 - Double click "Docker Quickstart Terminal" on your desktop.
 
 
-Install Cygwin (Windows only; optional)
+### Install Cygwin (Windows only; optional)
 
 - https://cygwin.com/install.html
 
@@ -118,7 +118,7 @@ Install Cygwin (Windows only; optional)
 If you don’t have Excel, you should install the OpenOffice ()(http://www.openoffice.org/download) suite, which includes a spreadsheet program called Calc. We won’t need it for today’s class.
 
 
-Download and run Docker container
+### Download and run Docker container
 
 
 ```bash
@@ -142,7 +142,7 @@ docker run -it --name audio_ml_notebook -p 8888:8888 -v ~/Desktop/sharedfolder:/
 
 
 
-Download and view audio
+## Download and view audio
 
 - Download audio with wget and view in Sonic Visualiser
 
@@ -155,35 +155,35 @@ wget ....zip
 
 
 
-Audio bundle
+## Audio bundle
 - sine wave
-  - clarinet recording
-  - guitar
-  - drum
-  - speech recording
-  - music recordings
+- clarinet recording
+- guitar
+- drum
+- speech recording
+- music recordings
 
 
 
 
 
-Introduce Sonic Visualiser
+## Introduce Sonic Visualiser
 
 
-The physics of sound
+## The physics of sound
 
-Overtones
-
-
-
-Introduce spectrograms
+## Overtones
 
 
-Timbre
+
+## Introduce spectrograms
+
+
+## Timbre
 - compare guitar and clarinet
-  - compare to drums
-  - compare male and female voices
-  - compare applause and voice
+- compare to drums
+- compare male and female voices
+- compare applause and voice
 
 
 
@@ -194,8 +194,8 @@ Convert all MP3s in a directory to mono 16/44.1 WAVs
 ```
 cd /path/to/directory
 
-for file in .mp3;
-do ffmpeg -i $file -acodec pcms16le -ac 1 `basename "$file" .mp3`.wav;
+for file in *.mp3;
+do ffmpeg -i $file -acodec pcm*s16le -ac 1 `basename "$file" .mp3`.wav;
 done
 ```
 
@@ -203,22 +203,22 @@ done
 
 
 
-Introduce Sonic Visualiser
+## Introduce Sonic Visualiser
 
 
-The physics of sound
+## The physics of sound
 
-Overtones
-
-
-
-Introduce spectrograms
+## Overtones
 
 
-Timbre
+
+## Introduce spectrograms
+
+
+## Timbre
 - compare guitar and clarinet
-  - compare to drums
-  - compare male and female voices
-  - compare applause and voice
+- compare to drums
+- compare male and female voices
+- compare applause and voice
 
 
