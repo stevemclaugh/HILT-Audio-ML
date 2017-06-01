@@ -150,7 +150,6 @@ wget -i http://www.stephenmclaughlin.net/HILT/Day_1/Session_1.1_files.txt
 
 
 
-
 ### What is sound?
 
 
