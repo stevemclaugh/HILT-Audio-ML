@@ -5,7 +5,7 @@
 ##### with credit due to https://zenodo.org/record/58336#.V-rh7pMrKRu (https://zenodo.org/record/58336#.V-rh7pMrKRu)
 
 
-Open a new terminal window and download a WAV (or use one we grabbed before).
+Choose a WAV file to work with for the following exercise, or download one using the following command. A short recording of speech (such as a poetry reading) would be ideal.
 
 ```bash
 wget http://www.stephenmclaughlin.net/HILT/Day_1/Creeley-Robert_23_The-Warning_Chicago_5-15-61.wav
@@ -41,13 +41,13 @@ By default, Librosa will resample the signal to 22050Hz. Alternatively, we can s
 librosa.load(wav_pathname, sr=44100)
 ```
 
-Or disable resampling to go with the original rate:
+Or disable resampling and go with the original sample rate:
 
 ```
 librosa.load(wav_pathname, sr=None)
 ```
 
-Now let's flip it an reverse it. In Python, we can easily reverse the order of a list called `xyz` with the bracket notation `xyz[::-1]`.
+Now let's flip it and reverse it. In Python, we can easily reverse the order of a list called `xyz` with the bracket notation `xyz[::-1]`.
 
 ```
 librosa.output.write_wav('Reverse_Creeley_The-Warning_61.wav', sample_array[::-1], sample_rate)
@@ -70,33 +70,14 @@ librosa.output.write_wav('Noisy_Creeley_The-Warning_61.wav', noise_array, sample
 ```
 
 
+Finally, let's combine two recordings.
 
 
+## Adding 2 2
 
 
-- Exercise: reverse samples and write to new file
+## Applying FFT to list of samples
+## Quick Assignment
 
-- Exercise: mix 2 sounds by adding their samples
-
-
-
-
-
-
-## Speech to Text
-
-```python
-wav*pathname="Alexander-Charles*27*NRA-26*Near-or-Random*Acts*Tucson-AZ*8-27-12.wav"
-
-r = sr.Recognizer()
-with sr.AudioFile(wav*pathname) as source:
-audio = r.record(source)    # read the entire audio file
-
-# recognize speech using Sphinx
-try:
-print(r.recognize*sphinx(audio))
-except sr.UnknownValueError:
-print("Sphinx could not understand audio")
-except sr.RequestError as e:
-print("Sphinx error; {0}".format(e))
-```
+> 
+> ... And how meaningful are the results?

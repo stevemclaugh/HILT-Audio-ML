@@ -3,214 +3,217 @@
 ## Command-line introduction
 #### (11:00–11:30)
 
+### Getting started
+
+In Jupyter, click `New`, then `Terminal` in the upper right to launch a new terminal window. Before we go further, you may find it helpful to open the following cheat sheet in your browser: Unix/Linux Command Reference ()(http://cc.iiti.ac.in/lcommands.pdf).
+
+First, a few notes on semantics. While in many cases we can use the terms “command line,” “terminal,” and “shell” interchangeably, each has a different technical denotation.
+
+“**Command line**” has the broadest scope, referring to a style of interface. A command-line interface (CLI), also known as a command-line interpreter, is any system in which all interaction occurs via text-based commands issued through a keyboard.
+
+A **terminal**, or more accurately a terminal emulator, is an application in your local operating system that essentially just provides a window to type in. We're using Jupyter's terminal through the browser so that everyone in the class is on the same page. Most macOS users use [Terminal](https://en.wikipedia.org/wiki/Terminal_(macOS)), while [Cygwin](https://www.cygwin.com/) is a popular option for Windows users who prefer a Unix-style interface to the DOS command prompt. In most versions of Linux, pressing `Ctrl+Alt+T` will launch a new terminal window.
+
+In your terminal window, type the following and press return. (Note that there is a space after `echo`.)
+
 ```
-setterm -term linux -back black -fore green -clear
-```
-
-> black|blue|green|cyan|red|magenta|yellow|white|default
-### Installing W3M
-
-- install w3m
-- go to nytimes.com or whatever
-
-## Using Exiftool
-
-
-#### **3.** Command Line Basics
-
-While in many cases we can use the terms “command line,” “terminal,” and “shell” interchangeably, each has a slightly different denotation.
-
-“**Command line**” has the broadest scope, referring to a style of interface. A command-line interface, also known as a command-line interpreter (CLI) is any system in which all interaction occurs via text-based commands issued through a keyboard.
-
-A **terminal**, or more accurately a terminal emulator, is an application in your local operating system that essentially just provides a window to type in. We’ll be using the built-in Mac OSX terminal emulator, called **Terminal**, which you can find under “Utilities” in your Applications folder (`/Applications/Utilities/Terminal.app`). Open Terminal, then type the following and press return. (Note that there is a space after `echo`.)
-
 echo $SHELL
-
-A **shell** is the software layer between user input and the rote world of file system maintenance. The graphical user interface (GUI) provided by Mac OS X is itself technically considered a shell, but if someone refers to “the shell” they typically mean a command-line interpreter like Bash ()(#). The command you entered above should have returned something like `/bin/bash`, which is the location of Bash’s “binary,” or machine-readable application file. If you open a command-line session on a remote server, your text input will be handled by the shell installed on that server.
-
-It’s important to understand that both Mac’s GUI (known as Aqua ()(#)) and Bash are rooted in the same set of underlying OS services. Since the introduction of OS X, and now in iOS as well, these core utilities have been handled by a Unix-like operating system called Darwin ()(#), which is based on the famously stable Berkeley Software Distribution (BSD) ()(#) Unix clone.
-
-Z shell ()(#) (or just Zsh) is an alternate command-line interpreter included in OS X and many other Unix-like systems. You can temporarily switch to Zsh by entering the following.
-
-zsh
-
-Your command prompt will change its appearance slightly, but otherwise you won’t notice much difference in the two CLIs’ basic functions. While the developers behind Bash have prioritized stability and backwards compatibility above all, the Zsh community has bucked convention by adding lots of features aimed at automating tasks for busy developers. We won’t be using Zsh in this course, so let’s switch back to Bash.
-
-```
-bash
 ```
 
-Create a new terminal window by pressing ⌘+N. Before we go further, you may find it helpful to pull up the following cheat sheet: Unix/Linux Command Reference ()(http://cc.iiti.ac.in/lcommands.pdf).
+A **shell** is the software layer between user input and the rote world of file system maintenance. A graphical user interface (GUI) like macOS or Windows is technically considered a shell, but if someone refers to “the shell” they typically mean a command-line interpreter such as [Bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell)). 
 
-Unix-like operating systems are based on a metaphor: a nested set of directories and data files, forming a tree structure that begins at the root directory `/`. A benefit of this arrangement is that each file can be uniquely identified using a pathname of the following format:`/Users/yourname/Desktop/file.txt`.
+The command you entered above returns `/bin/bash`, which is the location of Bash’s “binary,” or machine-readable application file.
 
-At any given moment in a shell session, the user metaphorically occupies a particular “working directory” within this greater tree structure. Enter the `pwd` (“print working directory”) command to see your current location.
+### The file system
 
+Unix-like operating systems are based on a metaphor: a nested set of directories and data files, forming a tree structure that begins at the root directory `/`. A benefit of this arrangement is that each file can be uniquely identified using a pathname of the following format:`/directory1/directory2/directory3/file.txt`. Our Docker container is running Ubuntu Linux, which has a separate file system from the primary operating system you're using (macOS, Windows, GUI-based Linux, etc.). The exception is `sharedfolder`, which is a shared volume between the two operating systems.
+
+In a shell session, at any given moment a user metaphorically occupies a particular "working directory" within this greater tree structure. Enter the `pwd` ("print working directory") command to see your current location.
+
+```
 pwd
+```
+
+For convenience, our Docker container always starts us off in `/home/sharedfolder` by default.
 
 The root directory, `/`, is just like any other folder in the system. Enter the following to change your working directory to root.
 
+```
 cd /
-
-You can view the contents of the current directory with the `ls` command.
-
-ls
-
-! ()(week/1/Image-5.png)
-
-You should see a list of directories including “Library,” “Users,” “bin,” “dev” and so on. Add the `-a` option and you’ll see a longer list including the hidden files “.DS_Store” “.Trashes.” You can find dozens of other options in the `ls` manual, which you can read using the following line. Press “q” to return to the shell.
-
-man ls
-
-In OS X, the file path `~/` is a shortcut to the current user’s home directory, which contains the “Documents” and “Downloads” folders users see foregrounded in the Finder. From the perspective of the command line, “Desktop” is a directory like any other. Let’s `cd` there.
-
-cd ~/Desktop
-
-> **Tip:** Hold down the Option key and click within the current line to move the cursor.
-
-#### **6.** Command Line Basics Continued
-Next, let’s create a new directory and brief text file on the desktop. We’ll spend more time working with text after the break.
-
-```bash
-mkdir test*dir
-echo "This is some text." > test.txt
 ```
 
-To move our text document into our directory we can use the `mv` tool. We’ll then `cd` into the folder.
+You won't get any obvious feedback, but you'll notice the location indicted to the left of your cursor has changed. You can view the contents of the current directory with the `ls` command.
 
-mv test.txt test*dir
-cd test*dir
-
-> **Tip:** `cd` interprets `test_dir` as a relative file path in the above lines. Because a folder with that names is indeed present in the working directory, we can refer to it by its local name rather than its full pathname beginning with `/`.
-
-Let’s make a copy of our text file with `cp` and check the updated directory contents.
-
-cp test.txt test2.txt
+```
 ls
+```
 
-> **Tip:** If you’re midway through typing the name of a pre-existing file in the shell, you can press tab to compete the name automatically.
+![](img/cli01.png)
 
-Let’s rename our new text file using `mv` then check the change with `ls`. Then we’ll delete the file with `rm`.
+You should see a list of directories including "bin," "boot," "dev", and so on. Add the `-l` option and you’ll see more information on each file.
 
-mv test2.txt test3.txt
+```
+ls -l
+```
+
+![](img/cli02.png)
+
+You can find dozens of other options in the manual for `ls`, which you can launch like so.
+
+```
+man ls
+```
+
+Use the arrow keys to scroll, then press `q` to return to the shell. You can launch so-called "man pages" this way for most command-line programs installed on your system.
+
+### Bash interface tips
+
+Now let's return to our shared folder.
+
+```
+cd /home/sharedfolder
+```
+
+If you haven't already done so, enter the following command to download a set of sample audio files.  
+
+```bash
+wget -i http://www.stephenmclaughlin.net/HILT/Day_1/Session_1.1_files.txt
+```
+
+Now use `ls` to list the files in the current directory.
+
+We can use `du` (short for "disk usage") to check the size of a file in bytes. Try adding the `-h` option after `du` to get the size in a more human-readable format.
+
+```
+du sine_440.wav
+```
+
+Tab completion is a useful feature of most Unix-like CLIs. If you type the first few letters of a long filename, pressing tab will automatically fill in the rest (as long as there's only one file in the directory beginning with those letters). Type out the following, then press tab to finish the filename. 
+
+```
+du My
+```
+
+![](img/cli03.png)
+
+You'll note that every space in the filename is preceded by a backslash; these are called **escaped** spaces. Because Bash uses spaces to indicate boundaries between each element of a command, the backslash makes it clear that the following space is part of the filename.
+
+Press return to run that command. Just for fun, let's see what happens when we don't escape our spaces.
+
+```
+du Myles - Philly ICA - 2010 - interstitial.mp3
+```
+
+![](img/cli04.png)
+
+The `du` tool looks for a file called `Myles`, then one called `-`, and so on. As an alternative, we can use quotation marks to make it explicit that the filename, including spaces, is a single chunk.
+
+```
+du "Myles - Philly ICA - 2010 - interstitial.mp3"
+```
+
+To make your life easier, you may want to avoid using spaces in the names of files you create. The underscore (`_`) is a good alternative.
+
+Now enter the same command followed by `&&` and press return.
+
+```
+du "Myles - Philly ICA - 2010 - interstitial.mp3" &&
+```
+
+![](img/cli05.png)
+
+Nothing happens! You're stuck in command-line limbo, and pressing return repeatedly doesn't help. If this sort of thing happens by mistake, press `Ctrl+c` (i.e., the `Ctrl` or `control` key and the `c` key at the same time).  This will cancel what you've just entered and bring you back to the regular command prompt. (Incidentally, `&&` is used to string together multiple commands, usually in the same line.)
+
+You may wonder why we're spending so much time on these fiddly Bash details in a course on audio machine learning. The reason is that these non-intuitive interface quirks can be *very* frustrating for beginners — and most programming don't mention them, leaving students to figure them out by trial and error.
+
+### ExifTool and manipulating files
+
+[ExifTool](http://owl.phy.queensu.ca/~phil/exiftool/) is a great CLI program for reading and writing metadata for a wide range of media file formats. Enter the following command to view information about the MP3 file we've been working with. Because the output won't all fit in the terminal window, note that you can scroll up to see the rest.
+
+```
+exiftool "Myles - Philly ICA - 2010 - interstitial.mp3"
+```
+
+![](img/cli06.png)
+
+In Unix-like systems, we can use the the `>` operator to write terminal output to disk. The following command will create a new text file called `Myles_metadata.txt`.
+
+```
+exiftool "Myles - Philly ICA - 2010 - interstitial.mp3" > Myles_metadata.txt
+```
+
+Note that you don't get any feedback in the terminal. Go to your desktop and open `sharedfolder`, then open the new file in your text editor of choice.
+
+You can also use the `cat` tool to quickly view a file's contents in the terminal.
+
+```
+cat Myles_metadata.txt
+```
+
+In addition to `cat`, several other useful CLI tools for viewing text files are `head`, `tail`, and `less`. Try them all if you like. When using `less`, you can press `q` to return to the command prompt.
+
+If you use `>` with a filename that already exists, you'll simply overwrite that file. Using `>>` instead will add your new output to the end of the existing file. The following command will run `exiftool` on all files in the current directory and write the output to a single text file.
+
+```
+exiftool * >> All_metadata.txt
+```
+
+We can also add text to the beginning and/or end of the `*` wildcard operator to filter by filename.
+
+```
+exiftool *.wav >> All_WAV_metadata.txt
+```
+
+```
+exiftool *.mp3 >> All_MP3_metadata.txt
+```
+
+Now let's make a new directory and move those text files into it. The following command creates a directory called `Metadata_files`.
+
+```
+mkdir Metadata_files
+````
+
+We can use the `mv` tool to move a single file into the new directory.
+
+```
+mv All_metadata.txt Metadata_files
+```
+
+Or we can move every file ending in ".txt" like so. 
+
+```
+mv *.txt Metadata_files
+```
+
+Now let's `cd` into our new directory and view its contents.
+
+```
+cd Metadata_files
 ls
-rm test3.txt
+```
+![](img/cli07.png)
 
-Another useful file path shortcut is `../`, which refers to the parent directory of our current location on the file tree. Let’s use it to `cd` back to Desktop.
+A useful shortcut is `../`, which refers to the parent directory of our current location on the file tree. Let’s use it to `cd` back to `sharedfolder`.
 
+```
 cd ../
+```
 
-Finally, we’ll delete our test directory and the file inside. Adding the `-r` option tells `rm`  to remove files recursively, meaning everything in the specified folder gets wiped out.
+Finally, we’ll delete the directory we just created along with its contents. Entering `rm` followed by a filename will delete that file; adding the `-r` option tells it to remove files recursively, meaning everything in the specified folder gets wiped out.
 
-rm -r test*dir
+```
+rm -r Metadata_files 
+```
 
 Be careful with `rm`, especially in recursive mode. It deletes files permanently rather than sending them to a Trash folder, so a small mistake can really ruin your day.
 
-#### Break
-
-#### **7.** Text I/O from the Command Line
-
-Below, we create a text file in the Desktop directory using the `>` operator. We then append a second line using `>>` and view the contents of Desktop to confirm we’ve made a new file.
-
-> **Tip:** If `>` is directed at an existing file, it will overwrite the original without warning.
-
-cd ~/Desktop
-echo "Hello there." > note.txt
-echo "Hello again." >> note.txt
-ls
-
-If we want to view our new text file, we have lots of options to choose from. By default, **head** will read the first 10 lines of a text file and print them in the shell. You can specify any number of lines with the `-n` option.
-
-head note.txt
-head -n 1 note.txt
-
-! ()(week/1/Image-6.png)
-
-**tail** is similar, printing a file’s final lines instead.
-
-tail note.txt
-tail -n 1 note.txt
-
-**less** is a program that lets us scroll through longer files. To close less when you’re finished, press the `q` key.
-
-less note.txt
-
-! ()(week/1/Image-7.png)
-
-**Nano** is a simple text editor that is available in most Unix-like systems.
-
-nano note.txt
-
-! ()(week/1/Image-8.png)
-
-Use the arrow keys to move your cursor around in the document. Add another line to the file and save it by pressing `ctrl+O` (the letter 'O'), followed by `return` to confirm the filename. Press `ctrl+X` to exit Nano.
 
 
 
 
-#### Download a Web page from the shell
-Begin by `cd`ing to Desktop.
 
-cd ~/Desktop
 
-Then enter `wget` followed by any URL.
 
-wget http://google.com
-
-! ()(week/1/Image-9.png)
-
-If you’re connected to the Internet and Wget is installed correctly, you should see feedback in the shell that looks something like the above. In this case, Wget has saved Google’s “index.html” file to the desktop. Either view the file in the shell using `less` or open it in TextWrangler.
-
-! ()(week/1/Image-10.png)
-
-To make the file more readable in TextWrangler, go to the toolbar and select `View > Text Display > Soft Wrap Text`.
-
-Wget is an amazingly versatile tool, and we’ll return to it in later weeks. In the meantime, the manual is worth a skim.
-
-man wget
-
-#### **9.** Download a video with youtube-dl and create an excerpt with FFmpeg <!-- Note: this takes a while. -->
-First, install **youtube-dl** and **FFmpeg** using Homebrew.
-
-brew install youtube-dl
-brew install ffmpeg
-
-`cd` to Desktop and pass a YouTube URL to `youtube-dl`. We’ll be downloading *A Bucket of Blood*, Roger Corman’s 1959 black comedy about beatnik culture (which happens to be in the public domain). The file will be around 300 MB, so you can substitute a shorter YouTube video if you’re close to your wi-fi bandwidth limit.
-
-cd ~/Desktop
-youtube-dl https://www.youtube.com/watch?v=PEzoCoIolJ0
-
-! ()(week/1/Image-11.png)
-
-To simplify things, locate the video in Finder and change its name to `Bucket.mp4`. Now let’s look at the file’s metadata with ExifTool.
-
-exiftool Bucket.mp4
-
-! ()(week/1/Image-12.png)
-
-Use the `--help` option to view ExifTool’s man page, which you can also find here ()(#). Press `q` to exit the manual viewer.
-
-exiftool --help
-
-Next, we’ll extract a 90-second segment from the video using FFmpeg ()(#). The `-ss` option specifies start time and `-t` is the length of our new excerpt. In this case we’re creating a 90-second clip beginning 10 minutes, 11 seconds into the film.  This may take a few minutes.
-
-ffmpeg -i Bucket.mp4 -ss 00:10:11.0 -t 00:01:30.0 Bucket*clip.mp4
-
-! ()(week/1/Image-13.png)
-
-Instead of HH:MM:SS.S notation, we can also specify start time and/or length using seconds. The following command produces the same output as the one above.
-
-ffmpeg -i Bucket.mp4 -ss 701 -t 90 Bucket*clip.mp4
-
-To re-encode a video clip when you make an excerpt, you can include the `-c copy` option.
-
-ffmpeg -i Bucket.mp4 -c copy -ss 00:10:11.0 -t 00:01:30.0 Bucket*clip.mp4
-
-When FFmpeg is finished, open `Bucket_clip.mp4` in VLC Media Player and see how it turned out. You may notice missing video frames or other errors.
-
-! ()(week/1/Image-14.png)
-
-As usual, entering `man ffmpeg` will display the program’s manual.
 
 
 #### **10.** Programming basics in Python (as much as time permits)
@@ -218,7 +221,7 @@ To get started using Python, simply enter `python` in the shell.
 
 python
 
-We’ve just switched from the standard shell to the Python environment, which you can tell at a glance by the “>>>” to the left of your cursor. We’re in what’s known as a language shell or a read-eval-print loop (REPL), in which any commands we enter will be interpreted as Python code. You can leave Python at any time by entering the `quit()` command.
+We’ve just switched from the standard shell to the Python environment, which you can tell at a glance by the ">>>" to the left of your cursor. We’re in what’s known as a language shell or a read-eval-print loop (REPL), in which any commands we enter will be interpreted as Python code. You can leave Python at any time by entering the `quit()` command.
 
 We’ll begin by assigning some data to variables.
 
@@ -255,7 +258,7 @@ We can now refer to individual list members using bracket annotation.
 
 eu*countries3 ()
 
-The command above returns the string “Croatia,” which is located at index 3. As in most programming languages, we begin counting from 0 when working with ordered data.
+The command above returns the string "Croatia," which is located at index 3. As in most programming languages, we begin counting from 0 when working with ordered data.
 
 If you try to access an out-of-range index value you’ll get an error.
 
@@ -270,11 +273,11 @@ Leaving one side of the colon blank will include all items on that end of the li
 eu*countries5: ()
 eu*countries:10 ()
 
-We can also use negative numbers to count backwards from the end of a list. The following will return “UK,” the final string in the list.
+We can also use negative numbers to count backwards from the end of a list. The following will return "UK," the final string in the list.
 
 eu*countries-1 ()
 
-Under the hood, every string in Python is actually a list of individual characters. In the example below, `word[7]` returns the letter “e,” while `word[7:20]` returns “establishment.”
+Under the hood, every string in Python is actually a list of individual characters. In the example below, `word[7]` returns the letter "e," while `word[7:20]` returns "establishment."
 
 word="antidisestablishmentarianism"
 word7 ()
@@ -341,19 +344,6 @@ for i in range(10):
 os.system("ffmpeg -i Bucket.mp4 -ss "+str(random*start())+" -t 4 clip"+str(i)+".mpg")
 
 os.system('''ffmpeg -i "concat:clip0.mpg|clip1.mpg|clip2.mpg|clip3.mpg|clip4.mpg|clip5.mpg|clip6.mpg|clip7.mpg|clip8.mpg|clip9.mpg" -c copy collage.mpg''')
-```
-
-Convert all MP3s in a directory to mono 16/44.1 WAVs
-
-
-
-
-```bash
-cd /path/to/directory
-
-for file in *.mp3; do 
-ffmpeg -i $file -acodec pcm_s16le -ac 1 `basename "$file" .mp3`.wav;
-done
 ```
 ## Python introduction
 #### (11:00–11:30)
