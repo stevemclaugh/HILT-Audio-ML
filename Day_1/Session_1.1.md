@@ -166,18 +166,19 @@ wget -i https://raw.githubusercontent.com/stevemclaugh/HILT-Audio-ML/master/Day_
 
 ![](img_presentation/Kline_1985_p439.png)
 
+<br><br>
+
 ![](img_presentation/Handel_1989_p28.png)
+
+<br><br>
 
 ![](img_presentation/Kline_1985_p440.png)
 
-
+<br><br>
 
 ![](img_presentation/2000px-Sine_wave_amplitude.svg.png)
 
 [Credit: Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Sine_wave_amplitude.svg)
-
-
-
 
 
 
@@ -197,17 +198,17 @@ wget -i https://raw.githubusercontent.com/stevemclaugh/HILT-Audio-ML/master/Day_
 ### Fourier series
 
 
-![](2000px-Fourier_Series.svg.png)
-
-[Credit: Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Fourier_Series.svg)
-
-
 
 
 ![](img_presentation/2000px-Square_Wave_Fourier_Series.svg.png)
 
 [Credit: Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Square_Wave_Fourier_Series.svg)
 
+
+
+![](img_presentation/2000px-Fourier_Series.svg.png)
+
+[Credit: Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Fourier_Series.svg)
 
 
 
@@ -220,12 +221,6 @@ wget -i https://raw.githubusercontent.com/stevemclaugh/HILT-Audio-ML/master/Day_
 
 
 ![](img_presentation/Handel_1989_p26_spectrograms.png)
-
-![](img_presentation/)
-![](img_presentation/)
-![](img_presentation/)
-![](img_presentation/)
-
 
 
 
