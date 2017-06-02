@@ -180,47 +180,66 @@ wget -i https://raw.githubusercontent.com/stevemclaugh/HILT-Audio-ML/master/Day_
 
 [Credit: Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Sine_wave_amplitude.svg)
 
+<br><br>
+
+![](img_presentation/Kline_1985_p430.png)
+
+<!--
+You clap your hands, there's some vibration, then it dies away. Just like a bob on a spring.
+-->
 
 
+### Mixing signals
+
+<!-- sound as a linear system, for the most part:
+
+analogy to multiple signals traveling on a fiber optic cable
+ -->
+
+<!-- insert image showing additive nature of waves -->
+
+
+
+
+<br><br>
 
 
 
 ### Harmonic overtones
 
+<!-- one examples of signals being mixed -->
 
 ![](img_presentation/2000px-Harmonic_partials_on_strings.svg.png)
 
 [Credit: Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Harmonic_partials_on_strings.svg)
 
 
+<br><br>
 
 
-### Fourier series
+### From the time domain to the frequency domain
 
 
+<!--
+Any signal we measure can be decomposed into a series of waves at different frequencies, called a Fourier series.
+-->
 
 
 ![](img_presentation/2000px-Square_Wave_Fourier_Series.svg.png)
 
 [Credit: Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Square_Wave_Fourier_Series.svg)
 
-
+<br><br>
 
 ![](img_presentation/2000px-Fourier_Series.svg.png)
 
 [Credit: Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Fourier_Series.svg)
 
 
-
-
-
-
-### From samples to spectrogram
-
-![](img_presentation/Kline_1985_p430.png)
-
+<br><br>
 
 ![](img_presentation/Handel_1989_p26_spectrograms.png)
+
 
 
 
@@ -230,10 +249,11 @@ wget -i https://raw.githubusercontent.com/stevemclaugh/HILT-Audio-ML/master/Day_
 
 ![](img_presentation/Pohlmann_2011_p22_sampling.png)
 
+<br><br>
 
 ![](img_presentation/Pohlmann_2011_p94.png)
 
-
+<br><br>
 
 ![](img_presentation/Pohlmann_2011_p26_aliasing.png)
 
