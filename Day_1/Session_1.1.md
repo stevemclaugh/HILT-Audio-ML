@@ -106,39 +106,38 @@ Some of the things we're going to do this week are in a way pretty easy, even tr
 
 
 
-## Up and Running with Docker
+## Up and running with Docker
 <!--(10:00–10:15)-->
-
-
-### Downloading and launching a Docker container
 
 Open a new terminal window. On Mac, open the application `Applications/Utilities/Terminal.app`. On a Windows desktop, double click `Docker Quickstart Terminal`.
 
 Before beginning, enter the following command to create a new directory called `sharedfolder` on your desktop. You'll only need to do this once.
 
-```bash
+```
 mkdir ~/Desktop/sharedfolder
 ```
 
-Now enter the following command to download the pre-built Docker image we'll be using. This should take around 5 minutes.
+Now enter the following command to download the pre-built Docker image we'll be using. This should take 5 minutes or so.
 
-```bash
+```
 docker pull stevemclaugh/audio-ml-notebook
 ```
 
-When the download is complete, enter the following to start the Docker container.
+When the download is complete, enter the following to run the container.
 
 ```
 docker run -it --name audio_ml_notebook -p 8888:8888 -v ~/Desktop/sharedfolder:/home/sharedfolder stevemclaugh/audio-ml-notebook
 ```
 
-For future, reference, the following command will kill all currently running Docker containers.
+>For future, reference, the following command will kill all currently running Docker containers.
 
-```bash
-rm -f $(docker ps -aq)
-```
+>```
+>rm -f $(docker ps -aq)
+>```
 
-> If you're curious, you can view the Dockerfile we're using to build our container here ()(https://github.com/stevemclaugh/audio-ml-notebook/blob/master/Dockerfile).
+
+
+> If you're curious, you can view the Dockerfile we're using to build our container here [](https://github.com/stevemclaugh/audio-ml-notebook/blob/master/Dockerfile).
 
 Open your browser and enter `localhost:8888` or `127.0.0.1:8888` in the URL bar. You should see the Jupyter interface. In the upper right, click `New`, then choose `Terminal`.
 
@@ -146,13 +145,13 @@ Open your browser and enter `localhost:8888` or `127.0.0.1:8888` in the URL bar.
 
 If you like, enter the following line to change the terminal color to green on black.
 
-```bash
+```
 setterm -term linux -back black -fore green -clear
 ```
 
 Now run the following command to download a set of sample audio files. Navigate to `sharedfolder` on your desktop to see the files.
 
-```bash
+```
 wget -i https://raw.githubusercontent.com/stevemclaugh/HILT-Audio-ML/master/Day_1/Session_1.1_audio.txt
 ```
 
