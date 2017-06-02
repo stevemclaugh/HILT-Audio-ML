@@ -137,20 +137,107 @@ setterm -term linux -back black -fore green -clear
 Now run the following command to download a set of sample audio files. Navigate to `sharedfolder` on your desktop to see the files.
 
 ```bash
-wget -i http://www.stephenmclaughlin.net/HILT/Day_1/Session_1.1_files.txt
+wget -i https://raw.githubusercontent.com/stevemclaugh/HILT-Audio-ML/master/Day_1/Session_1.1_audio.txt
 ```
 
 
 
 
 ## Thinking about sound
-#### (10:15–10:45)
+<!-- Lecture -->
+<!-- (10:15–10:45) -->
+
+###
 
 
+
+
+![](img_presentation/xkcd_here_to_help.png)
 
 
 
 ### What is sound?
+
+![](img_presentation/Kline_1985_p439.png)
+
+![](img_presentation/Handel_1989_p28.png)
+
+![](img_presentation/Kline_1985_p440.png)
+
+
+
+![](img_presentation/2000px-Sine_wave_amplitude.svg.png)
+
+[Credit: Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Sine_wave_amplitude.svg)
+
+
+
+
+
+
+
+
+
+### Harmonic overtones
+
+
+![](img_presentation/2000px-Harmonic_partials_on_strings.svg.png)
+
+[Credit: Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Harmonic_partials_on_strings.svg)
+
+
+
+
+### Fourier series
+
+
+![](2000px-Fourier_Series.svg.png)
+
+[Credit: Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Fourier_Series.svg)
+
+
+
+
+![](img_presentation/2000px-Square_Wave_Fourier_Series.svg.png)
+
+[Credit: Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Square_Wave_Fourier_Series.svg)
+
+
+
+
+
+
+
+### From samples to spectrogram
+
+![](img_presentation/Kline_1985_p430.png)
+
+
+![](img_presentation/Handel_1989_p26_spectrograms.png)
+
+![](img_presentation/)
+![](img_presentation/)
+![](img_presentation/)
+![](img_presentation/)
+
+
+
+
+
+### Digital vs. analog audio
+
+
+![](img_presentation/Pohlmann_2011_p22_sampling.png)
+
+
+![](img_presentation/Pohlmann_2011_p94.png)
+
+
+
+![](img_presentation/Pohlmann_2011_p26_aliasing.png)
+
+
+
 
 
 ### Bit depth and sample rate
@@ -159,20 +246,48 @@ wget -i http://www.stephenmclaughlin.net/HILT/Day_1/Session_1.1_files.txt
 
 
 
-### Transforming 1 dimension into 2
-
-
-
-### What are overtones?
-
-
 
 
 ### Timbre
 
-- compare guitar and clarinet
-- compare to drums
-- compare male and female voices
-- compare applause and voice
+### Sample recordings, for comparison in Sonic Visualiser
 
+- 440Hz sine wave
+- `sine_440.wav` 
+
+- Chime with harmonic overtones
+- `CBD-440607_NBC1600-MaryNobleBackstageWife_chime.wav`
+
+- Isolated clarinet
+- `357305__mtg__clarinet-f-major.wav`
+
+- Isolated drum
+- `371192__karolist__acoustic-kick.wav`
+
+- Isolated drums
+- `Amen_Break_-_normal_fast_and_slow_version-qwQLk7NcpO4.wav`
+
+- Music, no percussion
+- `brassproject_patteson.mp3`
+
+- Orchestral music
+- `Ravel_Bolero_Andre_Rieu.mp3`
+
+- Dense electronic music
+- `Spinee%20-%20Save%20Me-157140751.mp3`
+
+- Female voice, clean recording conditions
+- `OSullivan-Maggie_10_Lottery-&amp;-Requiem_States-of-Emergency_Rockdrill-11_05.mp3`
+
+- Female voice, relatively clean
+- `Mi-Kim-Myung_The-Oceans-Held-Up-a-Snarling-Dog_Segue-ZINC_2-20-16.mp3`
+
+- Female voice with noise and disotrion
+- `Myles%20-%20Philly%20ICA%20-%202010%20-%20interstitial.mp3`
+
+- Male voice
+- `Creeley-Robert_23_The-Warning_Chicago_5-15-61.wav`
+
+- Male voice, single word repeated across recordings
+- `Creeley_Company_supercut.mp3`
 

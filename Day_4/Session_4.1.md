@@ -1,7 +1,304 @@
 # Day 4, Session 1
 ### 9:00 – 10:30 am
 
+#### CSV I/O in Python
+Paste the following code snippet into a new Jupyter notebook, change "yourname" to your username on your computer (e.g. "tclement"), run the cell. 
+
+```python
+import csv
+
+csv_path="/Users/yourname/Desktop/Artists.csv"
+artist_table=[]
+
+o = open(csv_path,'rU')
+mydata = csv.reader(o)
+
+for row in mydata:
+ artist_table.append(row)
+
+o.close()
+
+artist_header=artist_table[0]
+artist_table.remove(artist_table[0])
+
+artist_header
+```
+
+![](week/3/Image-0.png)
+
+Check the length of the table, then enter an index value in brackets to look at an entry.
+
+```python
+len(artist_table)
+artist_table[6310]
+```
+
+We’ve just copied all the data from a CSV-formatted spreadsheet and turned it into a format Python can easily work with: a list of lists of strings. Let’s walk through the above a step at a time, this time loading MoMa’s artwork metadata. 
+
+We began by importing the `csv` module, Python’s built-in CSV input/output tool. Note, since you've already done it above, you don't have to do it again.
+
+```python
+   import csv
+```
+Next we assign our pathname to the `artwork_path` variable and initialize an empty list called `artwork_table`. This will become our list of lists, Python’s version of a table. Add the below to your open notebook, again replacing `yourname` with your user name.
+
+```python
+   artwork_path="/Users/yourname/Desktop/Artworks.csv"
+   artwork_table=[]
+```
+
+Then we create a file stream object `o` that points to our spreadsheet, including the argument `rU` to specify that we’ll be reading the file and expecting text. We pass our file object to `csv`’s constructor function and assign the new reader object to `mydata`.
+
+```python
+   second_csv = open(artwork_path,'rU')
+   mydata = csv.reader(second_csv)
+```
+Using a for loop, we iterate through our csv object and add each row (represented by a list) to the master list `meta_table`.
+
+```python   
+for row in mydata:
+artwork_table.append(row)
+second_csv.close()
+```
+Because this table uses column labels in the first row, we’ll save those labels to the variable `header` and remove it from the table.
+
+```python
+artwork_header=artwork_table[0]
+artwork_table.remove(artwork_table[0])
+```
+
+Finally, let’s look at our list of column titles …
+
+```python
+artwork_header
+```
+
+… as well as a row in our table.
+
+```python
+artwork_table[60946]
+```
+
+ **Tip:** Python will ignore any text following the “#” character on a line, which we can use to add explanatory comments within our code. Here are a couple lines from the snippet above followed by example notes. 
+
+```python
+header=meta_table[0] #saves list of column titles to variable 'header'
+meta_table.remove(meta_table[0]) #removes column titles from table
+```
+#### Writing CSVs
+Now that we’ve filtered and sorted our metadata, let’s export it to a new CSV file called `art_1960s.csv`.
+
+```python
+outpath="/Users/yourname/Desktop/art_1960s.csv"
+o = open(outpath, 'w')
+a = csv.writer(o)
+a.writerows([artwork_header])
+a.writerows(art_1960s_sorted)
+o.close()
+```
+Note that we call use `writerows` function twice, first writing the column headers and then the actual data. Because `writerows` only accepts lists of lists, we’ve enclosed the `header` list object in brackets to create a new list that only contains `header`.
+
+Find the new file on your desktop and open it in Excel or Calc. Take a few moments to explore the collection.
+#### The Dictionary Data Type
+So far, when we want to access the “Artist” field in MoMA’s metadata, we’ve been referring to its position in a given row.
+
+```python
+row=art_1960s_sorted[7700]
+row[1]
+```
+ _Output:_
+
+ ```python
+'Helen Frankenthaler'
+```
+
+This system is straightforward and well-suited for many jobs, but for large, complex projects it can be difficult to keep track of all those index numbers. Instead, we can use a dictionary to reference metadata fields by name rather than list index.
+
+
+
+
+Just like we can refer to a item in a list using brackets to enclose its position in the list, a dictionary, or dict, uses strings or numbers to identify each item in a collection. This data structure is known as a key-value pair. Here’s the simplest way to create a new dictionary.
+
+```python
+artist_meta={}
+artist_meta['xefxbbxbfConstituentID']=248
+artist_meta['DisplayName']='Richard Avedon'
+artist_meta['ArtistBio']='American, 1923–2004'
+artist_meta['Nationality']='American'
+artist_meta['Gender']='Male'
+artist_meta['BeginDate']=1923
+artist_meta['EndDate']=2004
+artist_meta['Wiki QID']='Q305497'
+artist_meta['ULAN']='500013773'
+```
+The following is a more compact format for the same key-value assignment.
+
+```python
+artist_meta={'xefxbbxbfConstituentID': 248, 'DisplayName': 'Richard Avedon', 'Gender': 'Male', 'BeginDate': 1923, 'EndDate': 2004, 'ULAN': '500013773', 'Wiki QID': 'Q305497', 'ArtistBio': 'American, 1923xe2x80x932004', 'Nationality': 'American'}
+```
+To access a value, enter its key between brackets like so.
+
+```python
+artist_meta['DisplayName']
+```
+And note that you can iterate over a dict to view and/or use its keys.
+
+```python
+for key in artist_meta:
+ print key + " - " + str(artist_meta[key])  
+```
+Next, let’s create a dict for each artist MoMA’s artist metadata. Here’s a snippet (repeated from above) that loads `Artists.csv` as a list of lists called `artist_table`.
+
+```python
+import csv
+csv_path="/Users/yourname/Desktop/Artists.csv"
+artist_table=[]
+
+o = open(csv_path,'rU')
+mydata = csv.reader(o)
+for row in mydata:
+ artist_table.append(row)
+
+o.close()
+artist_header=artist_table[0]
+artist_table.remove(artist_table[0])
+```
+Now we’ll use a for loop to iterate through `artist_table`, converting each list of cells to key-value format.
+
+```python
+artist_dicts=[]
+
+for row in artist_table:
+artist_meta={}
+artist_meta['xefxbbxbfConstituentID']=row[0]
+artist_meta['DisplayName']=row[1]
+artist_meta['ArtistBio']=row[2]
+artist_meta['Nationality']=row[3]
+artist_meta['Gender']=row[4]
+artist_meta['BeginDate']=int(row[5])
+artist_meta['EndDate']=int(row[6])
+artist_meta['Wiki QID']=row[7]
+artist_meta['ULAN']=row[8]
+artist_dicts.append(artist_meta)
+```  
+
+The list `artist_dicts` should now contain records for about 15,000 artists.
+
+```python
+len(artist_dicts)
+```
+Specifying an index in brackets will return a dict object.
+
+```python
+artist_dicts[12007]
+```
+And we can use one of our standard key names to get a particular value.
+
+```python
+artist_dicts[12007]['DisplayName']
+```
+![](week/3/Image-7.png)
+
+If we want to create a list of artist names, birth years, etc., we can thus iterate through the `artists_dicts` list and specify the field we want by name.
+
+#### Working with JSON
+JSON data is a representation of key-value pairs, very much like a dictionary in Python. For the following example we’ll download a JSON version of the artwork metadata we’ve been working with.
+
+```python
+import urllib2
+url="https://github.com/MuseumofModernArt/collection/blob/master/Artworks.json?raw=true"
+json_string=urllib2.urlopen(url).read()
+json_data = json.loads(json_string)
+```
+To view JSON data (as well as dictionaries and just about any other data format), Python offers a “pretty printer” module. There are also numerous online tools for prettifying JSON data, such as [these](http://jsonviewer.stack.hu/) [two](http://json.parser.online.fr/beta/).
+
+```python
+import pprint
+pprint.pprint(json_data)
+```
+To examine the top-level keys in our JSON data, enter the following.
+
+```python
+for key in json_data:
+print key
+```
+ _Output_:
+
+```python
+records
+meta
+```
+In this case, the “records” key points to a list of item records. The following will return the first record.
+print json_data['records'][0]
+
+ _Output_:
+
+```python
+{u'pk': 19579, u'model': u'collection.museumobject', u'fields': {u'primary_image_id': u'2006AJ6728', u'object': u'Cabinet', u'year_start': 1600, u'artist': u'Fiamengo, Iacopo', u'museum_number': u'W.36:1, 2-1981', u'rights': 3, u'object_number': u'O61539', u'last_processed': u'2016-04-30 02:11:57', u'event_text': u'', u'collection_code': u'FWK', u'place': u'Naples', u'longitude': u'14.25185000', u'last_checked': u'2016-04-30 02:11:57', u'museum_number_token': u'w361981', u'latitude': u'40.83990100', u'title': u'', u'date_text': u'about 1600 (Made)nca. 1600 (made)', u'slug': u'cabinet-fiamengo-iacopo', u'sys_updated': u'2015-12-11 00:00:00', u'location': u'Europe 1600-1815, room 6, case CA11'}}
+```
+
+A record, in turn, contains three keys: “pk,” “model,” and “fields.”
+
+```python
+print json_data['records'][0]
+```
+ _Output:_
+
+```python
+pk
+model
+fields
+```
+The metadata we’re interested in is under “fields.” 
+```python
+for key in json_data['records'][0]['fields']:
+print key
+```
+```python
+ _Output:_
+primary_image_id
+object
+year_start
+artist
+museum_number
+rights
+object_number
+last_processed
+event_text
+collection_code
+place
+longitude
+last_checked
+museum_number_token
+latitude
+title
+date_text
+slug
+sys_updated
+location
+```
+We can thus view the “artist” field like so.
+print json_data['records'][0]['fields']['artist']
+[Marie Meteer - Choosing the Right Technology for your Speech Analytics Project](https://callminer.com/wp-content/whitepapers/The-Right-Technology-for-Speech-Analytics.pdf)
+
+
+# LAS slide on STT
 ## Smoothing
+## Plotting completely random data
+
+```
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+random_vals=np.random.rand(4000)
+
+vals_pd=pd.Series(random_vals)
+vals_smooth=vals_pd.rolling(window=200).mean()
+
+plt.figure(figsize=(18,8))
+plt.plot(vals_smooth)
+```
 
 ```
 import numpy as np

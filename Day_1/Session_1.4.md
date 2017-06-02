@@ -1,115 +1,164 @@
 # Day 1, Session 4
 ### 2:45 – 4:30 pm
-## Simple KNN Chime Classifier
+## Sample-level audio manipulation
 
-Move the following 4 directories to `sharedfolder`, then examine a few files from each set in Sonic Visualiser.
-
-> NBC_Chimes> NBC_Chimes_test> NBC_Not_Chimes> NBC_Not_Chimes_test
-
-Now open the notebook `1.4 Simple KNN Chime Classifier`.
-
-When we're finished with this unit, try swapping in some other scikit-learn classifiers.
+##### with credit due to https://zenodo.org/record/58336#.V-rh7pMrKRu (https://zenodo.org/record/58336#.V-rh7pMrKRu)
 
 
-
-
-
-
-
-## Speech to Text
-
-```python
-wav*pathname="Alexander-Charles*27*NRA-26*Near-or-Random*Acts*Tucson-AZ*8-27-12.wav"
-
-r = sr.Recognizer()
-with sr.AudioFile(wav*pathname) as source:
-audio = r.record(source)    # read the entire audio file
-
-# recognize speech using Sphinx
-try:
-print(r.recognize*sphinx(audio))
-except sr.UnknownValueError:
-print("Sphinx could not understand audio")
-except sr.RequestError as e:
-print("Sphinx error; {0}".format(e))
-```
-### FFmpeg
-### Convert all MP3s in a directory to mono 16/44.1 WAVs
-
-
-
+Choose a WAV file to work with for the following exercise, or download one using the following command. A short recording of speech (such as a poetry reading) would be ideal.
 
 ```bash
-cd /path/to/directory
+wget http://www.stephenmclaughlin.net/HILT/Day_1/Creeley-Robert_23_The-Warning_Chicago_5-15-61.wav
+```
 
-for file in *.mp3; do 
-ffmpeg -i $file -acodec pcm_s16le -ac 1 `basename "$file" .mp3`.wav;
-done
+Create a new Jupyter notebook. In the first cell, let's import a few Python tools.
+
+```
+import librosa
+import librosa.display
+import IPython.display
+import os
+import numpy as np
+import matplotlib.pyplot as plt
+import matplotlib.style as ms
+ms.use('seaborn-muted')
+%matplotlib inline
+```
+
+Now let's load our WAV as a Librosa object. 
+
+```
+wav_pathname = 'Creeley-Robert_23_The-Warning_Chicago_5-15-61.wav'
+
+sample_array, sample_rate = librosa.load(wav_pathname)
+```
+
+We've just assigned two variables: `samples` is a numpy array of sample values; `sample_rate` is the sample rate, an integer. Print each of them and see what they look like.
+
+By default, Librosa will resample the signal to 22050Hz. Alternatively, we can set the sample rate manually like so:
+
+```
+librosa.load(wav_pathname, sr=44100)
+```
+
+Or disable resampling and use the original sample rate:
+
+```
+librosa.load(wav_pathname, sr=None)
+```
+
+Now let's flip it and reverse it. In Python, we can easily reverse the order of a list called `xyz` with the bracket notation `xyz[::-1]`.
+
+```
+librosa.output.write_wav('Reverse_Creeley_The-Warning_61.wav', sample_array[::-1], sample_rate)
+```
+
+Play the new file "Reverse_Creeley_The-Warning_61.wav" in an audio editor.
+
+
+Now let's add some white noise to the original recording.
+
+```
+noise_array=[]
+
+for sample in sample_array:
+noise_array.append(((random.random()-0.5)*0.1)+sample)
+
+noise_array = np.array(noise_array)
+
+librosa.output.write_wav('Noisy_Creeley_The-Warning_61.wav', noise_array, sample_rate)
+```
+
+For an added challenge, try mixing two recordings together.
+
+## Plotting spectral frames and MFCCs
+
+Open the notebook `1.3 Plotting Spectral Frames and MFCCs with Librosa`.
+
+## Pitch detection
+
+- [Aubio](https://aubio.org/manual/latest/)
+- [Aubio pitch methods](https://aubio.org/manpages/latest/aubiopitch.1.html)
+
+```
+# Adapted from 
+# https://github.com/aubio/aubio/blob/master/python/demos/demo_pitch.py
+
+import sys
+import numpy as np
+from numpy import ma
+from aubio import source, pitch
+from matplotlib import pyplot as plt
+
+%matplotlib inline
+
+filename = "OSullivan-Maggie_10_Lottery-&-Requiem_States-of-Emergency_Rockdrill-11_05.mp3"
+
+
+downsample = 1
+samplerate = 44100 // downsample
+
+win_s = 2048 // downsample # fft size
+hop_s = 512  // downsample # hop size
+
+s = source(filename, samplerate, hop_s)
+samplerate = s.samplerate
+
+tolerance = 0.8
+
+pitch_o = pitch("yinfft", win_s, hop_s, samplerate)
+pitch_o.set_unit("Hz")
+pitch_o.set_tolerance(tolerance)
+
+pitches = []
+confidences = []
+
+# total number of frames read
+total_frames = 0
+while True:
+samples, read = s()
+pitch = pitch_o(samples)[0]
+#pitch = int(round(pitch))
+confidence = pitch_o.get_confidence()
+#print("%f %f %f" % (total_frames / float(samplerate), pitch, confidence))
+pitches += [pitch]
+confidences += [confidence]
+total_frames += read
+if read < hop_s: break
+
+plt.figure(figsize=(100,5))
+plt.plot(pitches)
+plt.show()
 ```
 
 
-#### Download a Web page from the shell
-Begin by `cd`ing to Desktop.
+```
+pitches = np.array(pitches)
+confidences = np.array(confidences)
 
-cd ~/Desktop
+cleaned_pitches = ma.masked_where(confidences < tolerance, pitches)
+cleaned_pitches = ma.masked_where(cleaned_pitches > 1000, cleaned_pitches)
 
-Then enter `wget` followed by any URL.
+plt.figure(figsize=(100,5))
+plt.plot(cleaned_pitches)
+plt.show()
+```
 
-wget http://google.com
+```
+np.mean(cleaned_pitches)
+```
+## Histograms
 
-! ()(week/1/Image-9.png)
+```
+def hist_polarity(text_in):
+blob = TextBlob(sanitize(text_in))
+sentiments=[sentence.sentiment.polarity for sentence in blob.sentences]
+plt.figure(figsize=(20,10))
+plt.hist(sentiments_smooth)
 
-If you’re connected to the Internet and Wget is installed correctly, you should see feedback in the shell that looks something like the above. In this case, Wget has saved Google’s "index.html" file to the desktop. Either view the file in the shell using `less` or open it in TextWrangler.
-
-! ()(week/1/Image-10.png)
-
-To make the file more readable in TextWrangler, go to the toolbar and select `View > Text Display > Soft Wrap Text`.
-
-Wget is an amazingly versatile tool, and we’ll return to it in later weeks. In the meantime, the manual is worth a skim.
-
-man wget
-
-#### **9.** Download a video with youtube-dl and create an excerpt with FFmpeg <!-- Note: this takes a while. -->
-First, install **youtube-dl** and **FFmpeg** using Homebrew.
-
-brew install youtube-dl
-brew install ffmpeg
-
-`cd` to Desktop and pass a YouTube URL to `youtube-dl`. We’ll be downloading *A Bucket of Blood*, Roger Corman’s 1959 black comedy about beatnik culture (which happens to be in the public domain). The file will be around 300 MB, so you can substitute a shorter YouTube video if you’re close to your wi-fi bandwidth limit.
-
-cd ~/Desktop
-youtube-dl https://www.youtube.com/watch?v=PEzoCoIolJ0
-
-! ()(week/1/Image-11.png)
-
-To simplify things, locate the video in Finder and change its name to `Bucket.mp4`. Now let’s look at the file’s metadata with ExifTool.
-
-exiftool Bucket.mp4
-
-! ()(week/1/Image-12.png)
-
-Use the `--help` option to view ExifTool’s man page, which you can also find here ()(#). Press `q` to exit the manual viewer.
-
-exiftool --help
-
-Next, we’ll extract a 90-second segment from the video using FFmpeg ()(#). The `-ss` option specifies start time and `-t` is the length of our new excerpt. In this case we’re creating a 90-second clip beginning 10 minutes, 11 seconds into the film.  This may take a few minutes.
-
-ffmpeg -i Bucket.mp4 -ss 00:10:11.0 -t 00:01:30.0 Bucket*clip.mp4
-
-! ()(week/1/Image-13.png)
-
-Instead of HH:MM:SS.S notation, we can also specify start time and/or length using seconds. The following command produces the same output as the one above.
-
-ffmpeg -i Bucket.mp4 -ss 701 -t 90 Bucket*clip.mp4
-
-To re-encode a video clip when you make an excerpt, you can include the `-c copy` option.
-
-ffmpeg -i Bucket.mp4 -c copy -ss 00:10:11.0 -t 00:01:30.0 Bucket*clip.mp4
-
-When FFmpeg is finished, open `Bucket_clip.mp4` in VLC Media Player and see how it turned out. You may notice missing video frames or other errors.
-
-! ()(week/1/Image-14.png)
-
-As usual, entering `man ffmpeg` will display the program’s manual.
-
-## wget and and youtube-dl
+def hist_subjectivity(text_in):
+blob = TextBlob(sanitize(text_in))
+sentiments=[sentence.sentiment.subjectivity for sentence in blob.sentences]
+plt.figure(figsize=(20,10))
+plt.hist(sentiments)
+```

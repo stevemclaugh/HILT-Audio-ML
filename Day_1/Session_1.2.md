@@ -1,5 +1,13 @@
 # Day 1, Session 2
 ### 11:00 am – 12:00 pm
+
+
+
+<!-- talk briefly about unix history -->
+
+<!-- link to Stephenson -->
+
+
 ## Command-line introduction
 #### (11:00–11:30)
 
@@ -210,13 +218,85 @@ Be careful with `rm`, especially in recursive mode. It deletes files permanently
 
 
 
-## Python introduction
-#### (11:00–11:30)
+### FFmpeg
+### Convert all MP3s in a directory to mono 16/44.1 WAVs
 
 
 
 
-### os, shutil, and subprocess
+```bash
+cd /path/to/directory
+
+for file in *.mp3; do 
+ffmpeg -i $file -acodec pcm_s16le -ac 1 `basename "$file" .mp3`.wav;
+done
+```
 
 
+#### Download a Web page from the shell
+Begin by `cd`ing to Desktop.
 
+cd ~/Desktop
+
+Then enter `wget` followed by any URL.
+
+wget http://google.com
+
+! ()(week/1/Image-9.png)
+
+If you’re connected to the Internet and Wget is installed correctly, you should see feedback in the shell that looks something like the above. In this case, Wget has saved Google’s "index.html" file to the desktop. Either view the file in the shell using `less` or open it in TextWrangler.
+
+! ()(week/1/Image-10.png)
+
+To make the file more readable in TextWrangler, go to the toolbar and select `View > Text Display > Soft Wrap Text`.
+
+Wget is an amazingly versatile tool, and we’ll return to it in later weeks. In the meantime, the manual is worth a skim.
+
+man wget
+
+#### **9.** Download a video with youtube-dl and create an excerpt with FFmpeg <!-- Note: this takes a while. -->
+First, install **youtube-dl** and **FFmpeg** using Homebrew.
+
+brew install youtube-dl
+brew install ffmpeg
+
+`cd` to Desktop and pass a YouTube URL to `youtube-dl`. We’ll be downloading *A Bucket of Blood*, Roger Corman’s 1959 black comedy about beatnik culture (which happens to be in the public domain). The file will be around 300 MB, so you can substitute a shorter YouTube video if you’re close to your wi-fi bandwidth limit.
+
+cd ~/Desktop
+youtube-dl https://www.youtube.com/watch?v=PEzoCoIolJ0
+
+! ()(week/1/Image-11.png)
+
+To simplify things, locate the video in Finder and change its name to `Bucket.mp4`. Now let’s look at the file’s metadata with ExifTool.
+
+exiftool Bucket.mp4
+
+! ()(week/1/Image-12.png)
+
+Use the `--help` option to view ExifTool’s man page, which you can also find here ()(#). Press `q` to exit the manual viewer.
+
+exiftool --help
+
+Next, we’ll extract a 90-second segment from the video using FFmpeg ()(#). The `-ss` option specifies start time and `-t` is the length of our new excerpt. In this case we’re creating a 90-second clip beginning 10 minutes, 11 seconds into the film.  This may take a few minutes.
+
+ffmpeg -i Bucket.mp4 -ss 00:10:11.0 -t 00:01:30.0 Bucket*clip.mp4
+
+! ()(week/1/Image-13.png)
+
+Instead of HH:MM:SS.S notation, we can also specify start time and/or length using seconds. The following command produces the same output as the one above.
+
+ffmpeg -i Bucket.mp4 -ss 701 -t 90 Bucket*clip.mp4
+
+To re-encode a video clip when you make an excerpt, you can include the `-c copy` option.
+
+ffmpeg -i Bucket.mp4 -c copy -ss 00:10:11.0 -t 00:01:30.0 Bucket*clip.mp4
+
+When FFmpeg is finished, open `Bucket_clip.mp4` in VLC Media Player and see how it turned out. You may notice missing video frames or other errors.
+
+! ()(week/1/Image-14.png)
+
+As usual, entering `man ffmpeg` will display the program’s manual.
+
+### Onset detection
+
+## wget and and youtube-dl
