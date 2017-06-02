@@ -3,7 +3,40 @@
 
 ## Python introduction
 
+<!-- possibly continuing Bash intro from before lunch -->
 
-`Session_1.2_Python_Intro.ipynb`
+<!-- Go through the beginning of this together. -->
 
-<!-- go through these together -->
+
+Open a new terminal window in Jupyter ([link](http://localhost:8888/terminals/99)). Type `python` and hit return to launch the Python shell. You can tell you're in the Python shell (as opposed to Bash) by the `>>>` characters to the left of your cursor.
+
+```
+python
+```
+
+Let's do a little math. Enter the following and hit return.
+
+```
+1+1
+```
+
+Now let's print a string.
+
+```
+print('1337 skillz')
+```
+
+Python's shell (also known as a REPL, or read-eval-print loop) is great for getting a feel for the language and completing small tasks. For most of this course, however, we'll be using Jupyter's notebook interface. Type `quit()` and hit return to go back to the Bash shell.
+
+```python
+quit()
+```
+
+Now use `wget` to download the notebook file we'll be using for the rest of this session.
+
+
+```
+wget https://raw.githubusercontent.com/stevemclaugh/HILT-Audio-ML/master/Day_1/1.3%20Python%20Introduction.ipynb
+```
+
+Return to Jupyter's home screen ([link](http://localhost:8888)) and you should see [1.3 Python Introduction.ipynb](1.3 Python Introduction.ipynb). (You may need to refresh the page.) Click on it to launch the notebook.

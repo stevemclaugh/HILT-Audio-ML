@@ -2,6 +2,51 @@
 ### 11:00 am – 12:00 pm
 
 
+### Sample recordings, for comparison in Sonic Visualiser
+
+<!--11:00 to 11:30-->
+
+- 440Hz sine wave
+- `sine_440.wav`
+
+- Chime with harmonic overtones
+- `CBD-440607_NBC1600-MaryNobleBackstageWife_chime.wav`
+
+- Isolated clarinet
+- `357305__mtg__clarinet-f-major.wav`
+
+- Isolated drum
+- `371192__karolist__acoustic-kick.wav`
+
+- Isolated drums
+- `Amen_Break_-_normal_fast_and_slow_version-qwQLk7NcpO4.wav`
+
+- Music, no percussion
+- `brassproject_patteson.mp3`
+
+- Orchestral music
+- `Ravel_Bolero_Andre_Rieu.mp3`
+
+- Dense electronic music
+- `Spinee%20-%20Save%20Me-157140751.mp3`
+
+- Female voice, clean recording conditions
+- `OSullivan-Maggie_10_Lottery-&amp;-Requiem_States-of-Emergency_Rockdrill-11_05.mp3`
+
+- Female voice, relatively clean
+- `Mi-Kim-Myung_The-Oceans-Held-Up-a-Snarling-Dog_Segue-ZINC_2-20-16.mp3`
+
+- Female voice with noise and disotrion
+- `Myles%20-%20Philly%20ICA%20-%202010%20-%20interstitial.mp3`
+
+- Male voice
+- `Creeley-Robert_23_The-Warning_Chicago_5-15-61.wav`
+
+- Male voice, single word repeated across recordings
+- `Creeley_Company_supercut.mp3`
+
+
+
 
 <!-- talk briefly about unix history -->
 
@@ -9,7 +54,12 @@
 
 
 ## Command-line introduction
-#### (11:00–11:30)
+<!-- (11:30–12:00) -->
+
+<!-- People will work on their own. -->
+
+<!-- We can continue after lunch if people are taking a while. -->
+
 
 ### Getting started
 
@@ -27,7 +77,7 @@ In your terminal window, type the following and press return. (Note that there i
 echo $SHELL
 ```
 
-A **shell** is the software layer between user input and the rote world of file system maintenance. A graphical user interface (GUI) like macOS or Windows is technically considered a shell, but if someone refers to “the shell” they typically mean a command-line interpreter such as [Bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell)). 
+A **shell** is the software layer between user input and the rote world of file system maintenance. A graphical user interface (GUI) like macOS or Windows is technically considered a shell, but if someone refers to “the shell” they typically mean a command-line interpreter such as [Bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell)).
 
 The command you entered above returns `/bin/bash`, which is the location of Bash’s “binary,” or machine-readable application file.
 
@@ -95,7 +145,7 @@ We can use `du` (short for "disk usage") to check the size of a file in bytes. T
 du sine_440.wav
 ```
 
-Tab completion is a useful feature of most Unix-like CLIs. If you type the first few letters of a long filename, pressing tab will automatically fill in the rest (as long as there's only one file in the directory beginning with those letters). Type out the following, then press tab to finish the filename. 
+Tab completion is a useful feature of most Unix-like CLIs. If you type the first few letters of a long filename, pressing tab will automatically fill in the rest (as long as there's only one file in the directory beginning with those letters). Type out the following, then press tab to finish the filename.
 
 ```
 du My
@@ -187,7 +237,7 @@ We can use the `mv` tool to move a single file into the new directory.
 mv All_metadata.txt Metadata_files
 ```
 
-Or we can move every file ending in ".txt" like so. 
+Or we can move every file ending in ".txt" like so.
 
 ```
 mv *.txt Metadata_files
@@ -210,7 +260,7 @@ cd ../
 Finally, we’ll delete the directory we just created along with its contents. Entering `rm` followed by a filename will delete that file; adding the `-r` option tells it to remove files recursively, meaning everything in the specified folder gets wiped out.
 
 ```
-rm -r Metadata_files 
+rm -r Metadata_files
 ```
 
 Be careful with `rm`, especially in recursive mode. It deletes files permanently rather than sending them to a Trash folder, so a small mistake can really ruin your day.
@@ -227,7 +277,7 @@ Be careful with `rm`, especially in recursive mode. It deletes files permanently
 ```bash
 cd /path/to/directory
 
-for file in *.mp3; do 
+for file in *.mp3; do
 ffmpeg -i $file -acodec pcm_s16le -ac 1 `basename "$file" .mp3`.wav;
 done
 ```
