@@ -158,13 +158,9 @@ wget -i https://raw.githubusercontent.com/stevemclaugh/HILT-Audio-ML/master/Day_
 
 
 
-## Thinking through sound
+## Thinking about sound
 <!-- Lecture -->
 <!--(10:15–10:45)-->
-
-
-
-
 
 ### What is sound?
 
