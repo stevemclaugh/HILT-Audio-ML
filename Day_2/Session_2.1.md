@@ -4,6 +4,14 @@
 ### Machine learning overview
 
 
+<!--lecture-->
+
+![](img_presentation/xkcd_here_to_help.png)
+
+
+
+
+
 ### Collecting data for chime classifier
 
 ### Setup

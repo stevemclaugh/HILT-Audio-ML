@@ -2,13 +2,15 @@
 ### 9:30 – 10:45 am
 
 
-<!--
+
 ## Group Introductions
-#### (9:30–9:50)
+
+ <!--(9:30–9:50)-->
 
 ## Opening Remarks
- (9:50–10:00)
- -->
+
+ <!--(9:50–10:00)-->
+
 
 
 <!--
@@ -98,13 +100,17 @@ But we're going to learn a lot of good stuff about how to think about sound and 
 Some of the things we're going to do this week are in a way pretty easy, even trivial. But ... baby steps. Everybody starts somewhere.
 
 
+
+
 -->
 
 
-## Up and Running with Docker
-#### (10:00–10:15)
 
-### Steps to launch Docker container for this course
+## Up and Running with Docker
+<!--(10:00–10:15)-->
+
+
+### Downloading and launching a Docker container
 
 Open a new terminal window. On Mac, open the application `Applications/Utilities/Terminal.app`. On a Windows desktop, double click `Docker Quickstart Terminal`.
 
@@ -153,16 +159,11 @@ wget -i https://raw.githubusercontent.com/stevemclaugh/HILT-Audio-ML/master/Day_
 
 
 
-## Thinking about sound
+## Thinking through sound
 <!-- Lecture -->
-<!-- (10:15–10:45) -->
-
-###
+<!--(10:15–10:45)-->
 
 
-
-
-![](img_presentation/xkcd_here_to_help.png)
 
 
 
