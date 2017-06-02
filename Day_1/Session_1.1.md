@@ -1,20 +1,17 @@
 # Day 1, Session 1
 ### 9:30 – 10:45 am
+
+
+<!--
 ## Group Introductions
 #### (9:30–9:50)
+
 ## Opening Remarks
-#### (9:50–10:00)
-
-My philosophy: play and screwing around is a good way to learn
-
-Don't be discouraged. Think of it as a puzzle
-
-Just Goole the error code. If you find yourself getting actually angry, like emotional -- just get up and make a cup of tea. Or come back to it tomorrow.
+ (9:50–10:00)
+ -->
 
 
-
-
-## Day 1
+<!--
 
 ### What this course isn't
 - a course on statistics
@@ -26,6 +23,14 @@ Just Goole the error code. If you find yourself getting actually angry, like emo
 - finding, combining, and modifying existing tools
 - understanding sound as data
 - the limits and possibilities of machine learning for sound collections
+
+My philosophy: play and screwing around is a good way to learn
+
+Don't be discouraged. Think of it as a puzzle
+
+Just Goole the error code. If you find yourself getting actually angry, like emotional -- just get up and make a cup of tea. Or come back to it tomorrow.
+
+
 
 
 
@@ -48,7 +53,7 @@ Borrowing and stealing are ok
 The way librarians work and the way tenure-track research faculty work are very different. Every musicologist and ethnomusicologist on the planet (practically) has an enormous collection of illegally acquired music.
 
 
-It takes a little work every day over the course of years. 
+It takes a little work every day over the course of years.
 - This is an introduction.
 
 
@@ -74,8 +79,10 @@ If I make a mistake, just pipe up and correct me. I've spent a lot of time worki
 
 
 
-The machine won't answer questions for you. It can suggest directions (help you sift), and it can help support arguments you're already making. 
+The machine won't answer questions for you. It can suggest directions (help you sift), and it can help support arguments you're already making.
 
+
+ML is a huge field, and we're just going to scratch the surface.
 
 
 Audio ML is really hard. And it can be really tedious. And it may or may not solve the kinds of problems you want to solve in your work.
@@ -89,6 +96,9 @@ But we're going to learn a lot of good stuff about how to think about sound and 
 
 
 Some of the things we're going to do this week are in a way pretty easy, even trivial. But ... baby steps. Everybody starts somewhere.
+
+
+-->
 
 
 ## Up and Running with Docker
@@ -253,7 +263,7 @@ wget -i https://raw.githubusercontent.com/stevemclaugh/HILT-Audio-ML/master/Day_
 ### Sample recordings, for comparison in Sonic Visualiser
 
 - 440Hz sine wave
-- `sine_440.wav` 
+- `sine_440.wav`
 
 - Chime with harmonic overtones
 - `CBD-440607_NBC1600-MaryNobleBackstageWife_chime.wav`
@@ -290,4 +300,3 @@ wget -i https://raw.githubusercontent.com/stevemclaugh/HILT-Audio-ML/master/Day_
 
 - Male voice, single word repeated across recordings
 - `Creeley_Company_supercut.mp3`
-
