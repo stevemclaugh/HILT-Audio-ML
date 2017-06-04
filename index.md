@@ -10,10 +10,9 @@ Students should bring a laptop (any operating system) as well as headphones or e
 
 ## Class Sessions
 
-[Day 1, Session 1](Day_1/1.1.md) | [Day 1, Session 2](Day_1/1.2.md) | [Day 1, Session 3](Day_1/1.3.md) | [Day 1, Session 4](Day_1/1.4.md)
-[Day 2, Session 1](Day_2/2.1.md) | [Day 2, Session 2](Day_2/2.2.md) | [Day 2, Session 3](Day_2/2.3.md) | [Day 2, Session 4](Day_2/2.4.md)
-[Day 3, Session 1](Day_3/3.1.md) | [Day 3, Session 2](Day_3/3.2.md) | [Day 3, Session 3](Day_3/3.3.md) | [Day 3, Session 4](Day_3/3.4.md)
-[Day 4, Session 1](Day_1/4.1.md) | [Day 4, Session 2](Day_1/4.2.md) | [Day 4, Session 3](Day_1/4.3.md) | [Day 4, Session 4](Day_1/4.4.md)
+[1.1](Day_1/1.1.md)
+
+
 
 ### Group notepad (for sharing links etc.)
 
