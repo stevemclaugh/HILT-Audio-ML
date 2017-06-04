@@ -8,10 +8,17 @@ Participants will gain skills useful for using sound collections for a range of 
 
 Students should bring a laptop (any operating system) as well as headphones or earbuds. All tools used in this workshop are open source or free software. An audio corpus will be provided for the hands-on demo, but students should feel free to bring samples from collections they hope to explore. Experience recording or editing digital audio will be helpful but is not strictly necessary. No prior experience with Python or machine learning is required.
 
-## Class Sessions
+## Class Modules
 
-[1.1](Day_1/1.1.md)
-
+- [1.1 Intro and setup](Day_1/1.1.md)
+- [1.2 Visual listening](Day_1/1.2.md)
+- [1.3 Understanding sound](Day_1/1.3.md)
+- [1.4 CLI intro with Bash](Day_1/1.4.md)
+- [1.5 Exiftool and Bash file manipulation](Day_1/1.5.md)
+- [1.6 CLI audio essentials](Day_1/1.6.md)
+- [1.7 Python introduction](Day_1/1.7.md)
+- [1.8 Plotting spectral data and MFCCs with Librosa](Day_1/1.8.md)
+- [1.9 Pitch detection and histograms](Day_1/1.9.md)
 
 
 ### Group notepad (for sharing links etc.)
