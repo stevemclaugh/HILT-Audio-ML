@@ -72,6 +72,11 @@ A general introduction to Docker: [Docker for Beginners](https://prakhar.me/dock
 
 ## Further reading
 
+- [Command Line Setup Steps for macOS](https://gist.github.com/stevemclaugh/7cdc925233995af27dc947b8903b7d10)
+
+- [Guide to installing FFmpeg with mp3 support on macOS](https://gist.github.com/stevemclaugh/aa96cb5d8add3bfded51e0e586179959)
+
+
 ### Python
 
 - [*The Hitchhiker's Guide to Python*](http://shop.oreilly.com/product/0636920042921.do) by Kenneth Reitz and Tanya Schlusser
