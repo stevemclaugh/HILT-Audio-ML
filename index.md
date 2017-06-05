@@ -1,12 +1,6 @@
 # Humanities Research with Sound: Introduction to Audio Machine Learning
 
-### Instructor: Stephen McLaughlin
-
-Libraries and archives have digitized thousands of hours of historical audio in recent years, including literary performances, radio programs, and oral histories. In the rush to preserve these recordings before their physical media decay, applying detailed metadata has often been an afterthought. Unlike digitized text, which is readily searchable in most cases, describing the contents of audio recordings typically means listening in real time. Using a range of tools, the High-Performance Sound Technologies for Access and Scholarship (HiPSTAS) project at the University of Texas at Austin has worked to shine a light on these large collections and encourage their use in research.
-
-Participants will gain skills useful for using sound collections for a range of humanities research questions. By learning the basics of how to discover and identify patterns, search and sift collections of sounds, humanists can unlock new collections of valuable primary source material. This workshop will begin with an overview of machine learning techniques for expediting audio annotation, beginning with event detection classifiers, speaker diarization, and speech-to-text processing. We will then use the GUI-based tool Sonic Visualiser to tag audio events and use those data to search for additional instances in a wider corpus. We will train binary classifiers using pyAudioAnalysis, a wrapper for the Python machine learning library scikit-learn, and will conduct several batch processing steps using Audio Tagging Toolkit, developed by the HiPSTAS team.
-
-Students should bring a laptop (any operating system) as well as headphones or earbuds. All tools used in this workshop are open source or free software. An audio corpus will be provided for the hands-on demo, but students should feel free to bring samples from collections they hope to explore. Experience recording or editing digital audio will be helpful but is not strictly necessary. No prior experience with Python or machine learning is required.
+### Instructor: Stephen Reid McLaughlin
 
 ## Class Modules
 
@@ -18,55 +12,40 @@ Students should bring a laptop (any operating system) as well as headphones or e
 - [1.6 CLI audio essentials](Day_1/1.6.md)
 - [1.7 Python introduction](Day_1/1.7.md)
 - [1.8 Plotting spectral data and MFCCs with Librosa](Day_1/1.8.md)
-- [1.9 Pitch detection and histograms](Day_1/1.9.md)
-
 
 ### Group notepad (for sharing links etc.)
 
 - [https://etherpad.net/p/HILT-Audio-ML](https://etherpad.net/p/HILT-Audio-ML)
 
 
-
 ## Install the following programs before class
 
-### Plaintext editor
 
-- Atom: https://atom.io/
-or
-- Geany: https://www.geany.org/
+- Docker CE or Docker Toolbox (Either version is fine; I had some difficulty installing Docker CE on Windows.)
+    https://store.docker.com/search?type=edition&offering=community
+    https://www.docker.com/products/docker-toolbox
 
-### Audio software
+- Atom or Geany (or whatever plaintext editor you prefer)
+    https://atom.io
+    https://www.geany.org/
 
-- Sonic Visualiser: http://www.sonicvisualiser.org/
-- VLC Media Player: http://www.videolan.org/vlc/
-- Praat (optional): http://www.fon.hum.uva.nl/praat/
+- Sonic Visualiser
+    http://www.sonicvisualiser.org/download.html
 
-### Install Docker on Mac
+- VLC Media Player
+    http://www.videolan.org/vlc/index.html
 
-- Docker Community Edition: https://store.docker.com/search?type=edition&offering=community
+- OpenRefine
+    http://openrefine.org/download.html
 
-- Install Docker Toolbox (optional): https://www.docker.com/products/docker-toolbox
+- Praat (optional)
+    http://www.fon.hum.uva.nl/praat/
 
-
-### Install Docker on Windows
-
-- Install Docker Toolbox: https://www.docker.com/products/docker-toolbox
-- Double click "Docker Quickstart Terminal" on your desktop.
-
-
-### Install Cygwin (Windows only; optional)
-
-- https://cygwin.com/install.html
+- OpenOffice (if you don't have a copy of Excel)
+    https://www.openoffice.org/download/
 
 
-If you don’t have Excel, you should install the OpenOffice ()(http://www.openoffice.org/download) suite, which includes a spreadsheet program called Calc. We won’t need it for today’s class.
-
-
-
-## Getting started with Docker
-
-
-## Getting started with Docker
+## Handy Docker commands
 
 View currently running docker containers:
 
@@ -80,13 +59,7 @@ Close and delete all currently running Docker containers:
 docker rm -f $(docker ps -aq)
 ```
 
-### Steps to launch Docker container for this course
-
-Before beginning, create a new directory called `sharedfolder` on your desktop. You'll only need to do this once.
-
-```bash
-mkdir ~/Desktop/sharedfolder
-```
+### Steps to launch Docker container
 
 ```bash
 docker pull stevemclaugh/audio-ml-notebook
@@ -94,68 +67,42 @@ docker pull stevemclaugh/audio-ml-notebook
 docker run -it --name audio_ml_notebook -p 8888:8888 -v ~/Desktop/sharedfolder:/home/sharedfolder stevemclaugh/audio-ml-notebook
 ```
 
-You can view the Dockerfile we're using to build our container here ()(https://github.com/stevemclaugh/audio-ml-notebook/blob/master/Dockerfile).
+You can view the Dockerfile we're using to build our container [here](https://github.com/stevemclaugh/audio-ml-notebook/blob/master/Dockerfile).
 
-Here's a general overview of [Docker for beginners](https://prakhar.me/docker-curriculum/).
-
-And here's a [cheat sheet](https://www.docker.com/sites/default/files/Docker_CheatSheet_08.09.2016_0.pdf) with basic Docker commands.
+A general introduction to Docker: [Docker for Beginners](https://prakhar.me/docker-curriculum/).
 
 In case you're interested, here's a [handy overview](https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/) of best practices for creating Docker containers.
 
 
-## Running Python and other command-line tools on macOS
 
-If you're using macOS, see the following guide on getting up and running with bash and Python:
-- https://github.com/stevemclaugh/Python-Text-Workshop_Northwestern_2016/blob/Master/01_Pre-Workshop_OS-X.md
+## Further reading
 
-## Online Audio Collections
+### Python
 
-- 17,000 Lomax recordings
-- [http://research.culturalequity.org/home-audio.jsp](http://research.culturalequity.org/home-audio.jsp)
+- [*The Hitchhiker's Guide to Python*](http://shop.oreilly.com/product/0636920042921.do) by Kenneth Reitz and Tanya Schlusser
 
-- PennSound poetry archive
-- [http://writing.upenn.edu/pennsound/](http://writing.upenn.edu/pennsound/)
-
-- NBC D-Day broadcasts
-- https://archive.org/details/NBCCompleteBroadcastDDay
+- [*Introduction to Machine Learning with Python*](http://shop.oreilly.com/product/0636920030515.do) by Andreas C. Müller and Sarah Guido (2016)
 
 
+### Jupyter
+
+- [“The Jupyter Notebook”](http://jupyter-notebook.readthedocs.io/en/latest/notebook.html]
 
 
-## Further Reading
+### Audio
+
+- [*Listening: An Introduction to the Perception of Auditory Events*](https://mitpress.mit.edu/books/listening) by Stephen Handel (1989)
+
+- [Principles of Digital Audio, Sixth Edition](https://www.amazon.com/Principles-Digital-Audio-Sixth-Video/dp/0071663460) by Ken C. Pohlmann (2010)
 
 
+### Stats & Machine Learning
 
-### If you want more Python
-
-Hitchhiker's Guide to Python
-
-Introduction to Machine Learning with Python
+- [Machine Learning Coursera course](https://www.coursera.org/learn/machine-learning), taught by Andrew Ng
 
 
-### If you want more on Jupyter
+- [*Data Science from Scratch: First Principles with Python*](http://shop.oreilly.com/product/0636920033400.do) by Joel Grus (2015)
 
--   “The Jupyter Notebook.” [http://jupyter-notebook.readthedocs.io/en/latest/notebook.html](http://jupyter-notebook.readthedocs.io/en/latest/notebook.html)
+- [*An Introduction to Statistical Learning*](http://www-bcf.usc.edu/~gareth/ISL/) by Gareth James, Daniela Witten, Trevor Hastie, and Robert Tibshirani (2015)
 
-
-
-### If you want more on audio
-
-Stephen Handel 1989 - Listening
-
-Principles of Digital Audio
-
-
-### If you want more stats
-
-Data Science from Scratch
-
-An Introduction to Statistical Learning
-
-The Elements of Statistical Learning
-
-The Coursera Machine Learning course
-
-
-
-### Podcasts
+- [*The Elements of Statistical Learning*](https://statweb.stanford.edu/~tibs/ElemStatLearn/)by Trevor Hastie, Robert Tibshirani, and Jerome Friedman (2009)
