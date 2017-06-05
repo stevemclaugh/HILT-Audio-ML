@@ -11,7 +11,7 @@
 - [1.5 Exiftool and Bash file manipulation](Day_1/1.5.md)
 - [1.6 CLI audio essentials](Day_1/1.6.md)
 - [1.7 Python introduction](Day_1/1.7.md)
-- [1.8 Plotting spectral data and MFCCs with Librosa](Day_1/1.8.md)
+- [1.8 Plotting frequency and MFCCs with Librosa](Day_1/1.8.md)
 
 ### Group Notepad
 
