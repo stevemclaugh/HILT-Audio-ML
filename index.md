@@ -107,3 +107,4 @@ A general introduction to Docker: [Docker for Beginners](https://prakhar.me/dock
 - [*An Introduction to Statistical Learning*](http://www-bcf.usc.edu/~gareth/ISL/) by Gareth James, Daniela Witten, Trevor Hastie, and Robert Tibshirani (2015)
 
 - [*The Elements of Statistical Learning*](https://statweb.stanford.edu/~tibs/ElemStatLearn/) by Trevor Hastie, Robert Tibshirani, and Jerome Friedman (2009)
+
