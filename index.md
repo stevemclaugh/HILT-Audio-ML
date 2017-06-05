@@ -81,7 +81,7 @@ A general introduction to Docker: [Docker for Beginners](https://prakhar.me/dock
 
 ### Jupyter
 
-- [“The Jupyter Notebook”](http://jupyter-notebook.readthedocs.io/en/latest/notebook.html]
+- [“The Jupyter Notebook”](http://jupyter-notebook.readthedocs.io/en/latest/notebook.html)
 
 
 ### Audio
