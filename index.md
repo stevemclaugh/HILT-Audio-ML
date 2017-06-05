@@ -21,27 +21,27 @@
 ## Software to Install Before Class
 
 - Docker CE or Docker Toolbox
-    https://store.docker.com/search?type=edition&offering=community
-    https://www.docker.com/products/docker-toolbox
+    - https://store.docker.com/search?type=edition&offering=community
+    - https://www.docker.com/products/docker-toolbox
 
 - Atom or Geany
-    https://atom.io
-    https://www.geany.org/
+    - https://atom.io
+    - https://www.geany.org
 
 - Sonic Visualiser
-    http://www.sonicvisualiser.org/download.html
+    - http://www.sonicvisualiser.org/download.html
 
 - VLC Media Player
-    http://www.videolan.org/vlc/index.html
+    - http://www.videolan.org/vlc/index.html
 
 - OpenRefine
-    http://openrefine.org/download.html
+    - http://openrefine.org/download.html
 
 - Praat (optional)
-    http://www.fon.hum.uva.nl/praat/
+    - http://www.fon.hum.uva.nl/praat/
 
 - OpenOffice (if you don't have a copy of Excel)
-    https://www.openoffice.org/download/
+    - https://www.openoffice.org/download/
 
 
 ## Handy Docker commands
@@ -72,7 +72,7 @@ A general introduction to Docker: [Docker for Beginners](https://prakhar.me/dock
 
 ## Further reading
 
-- [Command Line Setup Steps for macOS](https://gist.github.com/stevemclaugh/7cdc925233995af27dc947b8903b7d10)
+- [Command line setup steps for macOS](https://gist.github.com/stevemclaugh/7cdc925233995af27dc947b8903b7d10)
 
 - [Guide to installing FFmpeg with mp3 support on macOS](https://gist.github.com/stevemclaugh/aa96cb5d8add3bfded51e0e586179959)
 
