@@ -13,12 +13,12 @@
 - [1.7 Python introduction](Day_1/1.7.md)
 - [1.8 Plotting spectral data and MFCCs with Librosa](Day_1/1.8.md)
 
-### Group notepad (for sharing links etc.)
+### Group Notepad
 
 - [https://etherpad.net/p/HILT-Audio-ML](https://etherpad.net/p/HILT-Audio-ML)
 
 
-## Install the following programs before class
+## Software to Install Before Class
 
 - Docker CE or Docker Toolbox
     https://store.docker.com/search?type=edition&offering=community
@@ -58,7 +58,7 @@ Close and delete all currently running Docker containers:
 docker rm -f $(docker ps -aq)
 ```
 
-### Steps to launch Docker container
+### Download and launch Docker container
 
 ```bash
 docker pull stevemclaugh/audio-ml-notebook
@@ -66,12 +66,9 @@ docker pull stevemclaugh/audio-ml-notebook
 docker run -it --name audio_ml_notebook -p 8888:8888 -v ~/Desktop/sharedfolder:/home/sharedfolder stevemclaugh/audio-ml-notebook
 ```
 
-You can view the Dockerfile we're using to build our container [here](https://github.com/stevemclaugh/audio-ml-notebook/blob/master/Dockerfile).
+You can view the Dockerfile we're using for this course [here](https://github.com/stevemclaugh/audio-ml-notebook/blob/master/Dockerfile).
 
 A general introduction to Docker: [Docker for Beginners](https://prakhar.me/docker-curriculum/).
-
-In case you're interested, here's a [handy overview](https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/) of best practices for creating Docker containers.
-
 
 ## Further reading
 
