@@ -1,6 +1,6 @@
 # Humanities Research with Sound: Introduction to Audio Machine Learning
 
-### Instructor: Stephen Reid McLaughlin
+### Instructor: Steve McLaughlin
 
 ## Class Modules
 
@@ -20,12 +20,11 @@
 
 ## Install the following programs before class
 
-
-- Docker CE or Docker Toolbox (Either version is fine; I had some difficulty installing Docker CE on Windows.)
+- Docker CE or Docker Toolbox
     https://store.docker.com/search?type=edition&offering=community
     https://www.docker.com/products/docker-toolbox
 
-- Atom or Geany (or whatever plaintext editor you prefer)
+- Atom or Geany
     https://atom.io
     https://www.geany.org/
 
@@ -74,7 +73,6 @@ A general introduction to Docker: [Docker for Beginners](https://prakhar.me/dock
 In case you're interested, here's a [handy overview](https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/) of best practices for creating Docker containers.
 
 
-
 ## Further reading
 
 ### Python
@@ -91,15 +89,16 @@ In case you're interested, here's a [handy overview](https://docs.docker.com/eng
 
 ### Audio
 
+- [*Mathematics for the Nonmathematician*](https://www.amazon.com/Mathematics-Nonmathematician-Morris-Kline/dp/0486248232) by Morris Kline, chapters 18 and 19 (1985)
+
 - [*Listening: An Introduction to the Perception of Auditory Events*](https://mitpress.mit.edu/books/listening) by Stephen Handel (1989)
 
-- [Principles of Digital Audio, Sixth Edition](https://www.amazon.com/Principles-Digital-Audio-Sixth-Video/dp/0071663460) by Ken C. Pohlmann (2010)
+- [*Principles of Digital Audio*, Sixth Edition](https://www.amazon.com/Principles-Digital-Audio-Sixth-Video/dp/0071663460) by Ken C. Pohlmann (2010)
 
 
 ### Stats & Machine Learning
 
-- [Machine Learning Coursera course](https://www.coursera.org/learn/machine-learning), taught by Andrew Ng
-
+- [Machine Learning](https://www.coursera.org/learn/machine-learning) on Coursera, taught by Andrew Ng
 
 - [*Data Science from Scratch: First Principles with Python*](http://shop.oreilly.com/product/0636920033400.do) by Joel Grus (2015)
 
