@@ -19,6 +19,9 @@
 - [2.5 GMM classification with Smacpy](Day_2/2.5.md)
 - [2.6 Plotting frequency and MFCCs with Librosa](Day_2/2.6.md)
 
+- [2.8 Overseas correspondent classifier](Day_2/2.8.md)
+
+
 
 ### Group Notepad
 
