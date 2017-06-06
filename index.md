@@ -4,6 +4,7 @@
 
 ## Class Modules
 
+
 - [1.1 Intro and setup](Day_1/1.1.md)
 - [1.2 Visual listening](Day_1/1.2.md)
 - [1.3 Understanding sound](Day_1/1.3.md)
@@ -13,10 +14,12 @@
 - [1.7 Python introduction](Day_1/1.7.md)
 - [1.8 Plotting frequency and MFCCs with Librosa](Day_1/1.8.md)
 
+
 - [2.1 Machine Learning and Sound](Day_2/2.1.md)
 - [2.2 D-Day chime search with ATTK](Day_2/2.2.md)
 - [2.3 Overseas correspondent classifier](Day_2/2.3.md)
 - [2.4 scikit-learn by hand](Day_2/2.4.md)
+
 
 ### Group Notepad
 
