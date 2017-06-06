@@ -1,0 +1,1 @@
+Evaluate how well pyAudioAnalysis emotion detector does
