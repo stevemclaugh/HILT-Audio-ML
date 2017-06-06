@@ -1,0 +1,8 @@
+~*
+.DS_Store
+.ipynb*
+___*
+.Ulysses*
+_gsdata_*
+_gsdata_/*
+___Pre-baked data/*
