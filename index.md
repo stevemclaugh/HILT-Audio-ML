@@ -13,6 +13,13 @@
 - [1.7 Python introduction](Day_1/1.7.md)
 - [1.8 Plotting frequency and MFCCs with Librosa](Day_1/1.8.md)
 
+- [2.1 Machine Learning and Sound](Day_2/2.1.md)
+- [2.2 D-Day chime search with ATTK](Day_2/2.2.md)
+- [2.3 Overseas correspondent classifier](Day_2/2.3.md)
+- [2.4 scikit-learn by hand](Day_2/2.4.md)
+- [2.5 GMM classification with Smacpy](Day_2/2.5.md)
+- [2.6 ](Day_2/2.6Machine Learning and Sound.md)
+
 ### Group Notepad
 
 - [https://etherpad.net/p/HILT-Audio-ML](https://etherpad.net/p/HILT-Audio-ML)
@@ -76,6 +83,10 @@ A general introduction to Docker: [Docker for Beginners](https://prakhar.me/dock
 
 - [Guide to installing FFmpeg with mp3 support on macOS](https://gist.github.com/stevemclaugh/aa96cb5d8add3bfded51e0e586179959)
 
+### Audio ML in archives
+
+- [Speech Trax: Vocal Tracking of Famous French Speakers](http://recherche.ina.fr/eng/Details-projets/Speech-Trax), Vallet Carrive, Nabi, and Derval
+
 
 ### Python
 
@@ -107,4 +118,3 @@ A general introduction to Docker: [Docker for Beginners](https://prakhar.me/dock
 - [*An Introduction to Statistical Learning*](http://www-bcf.usc.edu/~gareth/ISL/) by Gareth James, Daniela Witten, Trevor Hastie, and Robert Tibshirani (2015)
 
 - [*The Elements of Statistical Learning*](https://statweb.stanford.edu/~tibs/ElemStatLearn/) by Trevor Hastie, Robert Tibshirani, and Jerome Friedman (2009)
-
