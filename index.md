@@ -11,13 +11,13 @@
 - [1.5 Exiftool and Bash file manipulation](Day_1/1.5.md)
 - [1.6 CLI audio essentials](Day_1/1.6.md)
 - [1.7 Python introduction](Day_1/1.7.md)
-- [1.8 Plotting frequency and MFCCs with Librosa](Day_1/1.8.md)
-
 
 - [2.1 Machine Learning and Sound](Day_2/2.1.md)
 - [2.2 D-Day chime search with ATTK](Day_2/2.2.md)
 - [2.3 Overseas correspondent classifier](Day_2/2.3.md)
 - [2.4 scikit-learn by hand](Day_2/2.4.md)
+- [2.5 GMM classification with Smacpy](Day_2/2.5.md)
+- [2.6 Plotting frequency and MFCCs with Librosa](Day_2/2.6.md)
 
 
 ### Group Notepad
