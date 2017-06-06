@@ -17,8 +17,6 @@
 - [2.2 D-Day chime search with ATTK](Day_2/2.2.md)
 - [2.3 Overseas correspondent classifier](Day_2/2.3.md)
 - [2.4 scikit-learn by hand](Day_2/2.4.md)
-- [2.5 GMM classification with Smacpy](Day_2/2.5.md)
-- [2.6 ](Day_2/2.6Machine Learning and Sound.md)
 
 ### Group Notepad
 
