@@ -4,7 +4,6 @@
 
 ## Class Modules
 
-
 - [1.1 Intro and setup](Day_1/1.1.md)
 - [1.2 Visual listening](Day_1/1.2.md)
 - [1.3 Understanding sound](Day_1/1.3.md)
