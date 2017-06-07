@@ -20,6 +20,7 @@
 - [2.8 NBC overseas correspondent classifier](Day_2/2.8.md)
 
 - [3.1 Training and classifying with pyAudioAnalysis](Day_3/3.1.md)
+- [3.2 Corpus building/web scraping](Day_3/3.2.md)
 
 
 ### Group Notepad
