@@ -53,7 +53,6 @@
 - OpenOffice (if you don't have a copy of Excel)
     - https://www.openoffice.org/download/
 
-
 ## Handy Docker commands
 
 View currently running docker containers:
