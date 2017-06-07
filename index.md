@@ -20,6 +20,9 @@
 - [2.6 Plotting frequency and MFCCs with Librosa](Day_2/2.6.md)
 - [2.8 NBC overseas correspondent classifier](Day_2/2.8.md)
 
+- [3.1 Training and classifying with pyAudioAnalysis](Day_3/3.1.md)
+
+
 ### Group Notepad
 
 - [https://etherpad.net/p/HILT-Audio-ML](https://etherpad.net/p/HILT-Audio-ML)
