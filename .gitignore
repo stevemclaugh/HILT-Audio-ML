@@ -1,4 +1,3 @@
-~*
 .DS_Store
 .ipynb*
 ___*
@@ -6,3 +5,4 @@ ___*
 _gsdata_*
 _gsdata_/*
 ___Pre-baked data/*
+~*
