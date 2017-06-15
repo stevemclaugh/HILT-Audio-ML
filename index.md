@@ -16,6 +16,7 @@
 - [1.7 Python introduction](Day_1/1.7.md)
     - [Jupyter notebook](https://github.com/stevemclaugh/HILT-Audio-ML/blob/master/Day_1/1.7_Python_Introduction.ipynb)
 
+
 #### Day 2
 
 - [2.1 Machine learning and sound](Day_2/2.1.md)
@@ -31,6 +32,7 @@
 - [2.6 NBC overseas correspondent classifier pt. 1: Labeling and training](Day_2/2.8.md)
     - [Jupyter notebook](https://github.com/stevemclaugh/HILT-Audio-ML/blob/master/Day_2/2.6_NBC_Overseas_Correspondent_Classifier.ipynb)
 
+
 #### Day 3
 
 - [3.1 NBC overseas correspondent classifier pt. 2: Classifying with pyAudioAnalysis](Day_3/3.1.md)
@@ -39,6 +41,15 @@
 - [3.2 Corpus building & web scraping](Day_3/3.2.md)
 
 #### Day 4
+
+- [4.1 Automatic speech recognition](Day_4/4.1.md)
+    - [Slides](https://github.com/stevemclaugh/HILT-Audio-ML/blob/master/Day_4/Day_4.pptx?raw=true)
+    - [Jupyter notebook](https://github.com/stevemclaugh/HILT-Audio-ML/blob/master/Day_4/4.1%20Automatic%20Speech%20Recognition.ipynb)
+- [4.2 Kaldi ASR transcript search](Day_4/4.2.md)
+    - [Jupyter Notebook](https://github.com/stevemclaugh/HILT-Audio-ML/blob/master/Day_4/4.2_Kaldi_ASR_search.ipynb)
+- [4.3 Automatic speaker diarization](Day_4/4.3.md)
+    - [Jupyter notebook](https://github.com/stevemclaugh/HILT-Audio-ML/blob/master/Day_4/4.3_Automatic_speaker_diarization.ipynb)
+
 
 
 ## Handy Docker commands
@@ -68,7 +79,7 @@ You can view the Dockerfile we're using for this course [here](https://github.co
 A general introduction to Docker: [Docker for Beginners](https://prakhar.me/docker-curriculum/).
 
 
-### Group notepad for sharing text snippets
+### Group notepad for sharing snippets & links
 
 - [https://docs.google.com/document/d/1IXeOAQRcUsu5AH656BhnlXWoFgDZY168hhqjZ8BGbxI/edit](Group Google Doc)
 
