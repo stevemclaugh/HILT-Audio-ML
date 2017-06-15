@@ -28,13 +28,15 @@
     - [Jupyter notebook](https://github.com/stevemclaugh/HILT-Audio-ML/blob/master/Day_2/2.4%20Pitch_detection_over_time.ipynb)
 - [2.5 Extracting features and training a scikit-learn classifier](Day_2/2.5.md)
     - [Jupyter notebook](https://github.com/stevemclaugh/HILT-Audio-ML/blob/master/Day_2/2.5_Simple_KNN_Chime_Classifier.ipynb)
-- [2.6 NBC overseas correspondent classifier pt. 1: Training](Day_2/2.8.md)
+- [2.6 NBC overseas correspondent classifier pt. 1: Labeling and training](Day_2/2.8.md)
     - [Jupyter notebook](https://github.com/stevemclaugh/HILT-Audio-ML/blob/master/Day_2/2.6_NBC_Overseas_Correspondent_Classifier.ipynb)
 
 #### Day 3
 
-- [3.1 NBC overseas correspondent classifier pt. 2: Classifying](Day_3/3.1.md)
-- [3.2 Corpus building/web scraping](Day_3/3.2.md)
+- [3.1 NBC overseas correspondent classifier pt. 2: Classifying with pyAudioAnalysis](Day_3/3.1.md)
+    - [Jupyter notebook](https://github.com/stevemclaugh/HILT-Audio-ML/blob/master/Day_3/3.1_Train_and_classify_with_pyAudioAnalysis.ipynb)
+
+- [3.2 Corpus building & web scraping](Day_3/3.2.md)
 
 #### Day 4
 
