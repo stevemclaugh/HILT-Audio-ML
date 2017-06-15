@@ -81,7 +81,7 @@ A general introduction to Docker: [Docker for Beginners](https://prakhar.me/dock
 
 ### Group notepad for sharing snippets & links
 
-- [https://docs.google.com/document/d/1IXeOAQRcUsu5AH656BhnlXWoFgDZY168hhqjZ8BGbxI/edit](Group Google Doc)
+- [https://docs.google.com/document/d/1IXeOAQRcUsu5AH656BhnlXWoFgDZY168hhqjZ8BGbxI/edit?usp=sharing](https://docs.google.com/document/d/1IXeOAQRcUsu5AH656BhnlXWoFgDZY168hhqjZ8BGbxI/edit?usp=sharing)
 
 
 ## Software to Install Before Class
