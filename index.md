@@ -14,15 +14,22 @@
 - [1.5 Exiftool and Bash file manipulation](Day_1/1.5.md)
 - [1.6 Essential CLI audio tools](Day_1/1.6.md)
 - [1.7 Python introduction](Day_1/1.7.md)
+    - [Jupyter notebook](https://github.com/stevemclaugh/HILT-Audio-ML/blob/master/Day_1/1.7_Python_Introduction.ipynb)
 
 #### Day 2
 
-- [2.1 Machine Learning and Sound](Day_2/2.1.md)
-- [2.2 D-Day chime search with ATTK](Day_2/2.2.md)
-- [2.4 scikit-learn by hand](Day_2/2.4.md)
-- [2.5 Plotting frequency and MFCCs with Librosa](Day_2/2.5.md)
-- [2.6 Pitch detection](Day_2/2.6.md)
-- [2.8 NBC overseas correspondent classifier](Day_2/2.8.md)
+- [2.1 Machine learning and sound](Day_2/2.1.md)
+    - [Slides](https://github.com/stevemclaugh/HILT-Audio-ML/blob/master/Day_2/Day_2_ML.pptx?raw=true)
+- [2.2 NBC chime search with ATTK](Day_2/2.2.md)
+    - [Jupyter notebook](https://github.com/stevemclaugh/HILT-Audio-ML/blob/master/Day_2/2.2_Classify_and_Play_NBC_Chimes.ipynb)
+- [2.3 Plotting frequency domain and MFCCs with Librosa](Day_2/2.3.md)
+    - [Jupyter notebook](https://github.com/stevemclaugh/HILT-Audio-ML/blob/master/Day_2/2.3_Plotting_frequency_and_MFCCs_with_Librosa.ipynb)
+- [2.4 Pitch detection](Day_2/2.4.md)
+    - [Jupyter notebook](https://github.com/stevemclaugh/HILT-Audio-ML/blob/master/Day_2/2.4%20Pitch_detection_over_time.ipynb)
+- [2.5 Extracting features and training a KNN classifier with scikit-learn](Day_2/2.5.md)
+    - [Jupyter notebook](https://github.com/stevemclaugh/HILT-Audio-ML/blob/master/Day_2/2.5_Simple_KNN_Chime_Classifier.ipynb)
+- [2.6 NBC overseas correspondent classifier](Day_2/2.8.md)
+    - [Jupyter notebook](https://github.com/stevemclaugh/HILT-Audio-ML/blob/master/Day_2/2.6_NBC_Overseas_Correspondent_Classifier.ipynb)
 
 #### Day 3
 
