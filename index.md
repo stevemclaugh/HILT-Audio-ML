@@ -4,13 +4,18 @@
 
 ## Class Modules
 
-- [1.1 Intro and setup](Day_1/1.1.md)
+#### Day 1
+
+- [1.1 Up and running with Docker](Day_1/1.1.md)
 - [1.2 Visual listening](Day_1/1.2.md)
 - [1.3 Understanding sound](Day_1/1.3.md)
-- [1.4 CLI intro with Bash](Day_1/1.4.md)
+    - [Slides](https://github.com/stevemclaugh/HILT-Audio-ML/blob/master/Day_1/Day_1_Sound.pptx?raw=true)
+- [1.4 Command line introduction with Bash](Day_1/1.4.md)
 - [1.5 Exiftool and Bash file manipulation](Day_1/1.5.md)
-- [1.6 CLI audio essentials](Day_1/1.6.md)
+- [1.6 Essential CLI audio tools](Day_1/1.6.md)
 - [1.7 Python introduction](Day_1/1.7.md)
+
+#### Day 2
 
 - [2.1 Machine Learning and Sound](Day_2/2.1.md)
 - [2.2 D-Day chime search with ATTK](Day_2/2.2.md)
@@ -19,13 +24,44 @@
 - [2.6 Pitch detection](Day_2/2.6.md)
 - [2.8 NBC overseas correspondent classifier](Day_2/2.8.md)
 
+#### Day 3
+
 - [3.1 Training and classifying with pyAudioAnalysis](Day_3/3.1.md)
 - [3.2 Corpus building/web scraping](Day_3/3.2.md)
 
+#### Day 4
 
-### Group Notepad
 
-- [https://etherpad.net/p/HILT-Audio-ML](https://etherpad.net/p/HILT-Audio-ML)
+## Handy Docker commands
+
+View currently running docker containers:
+
+```bash
+docker ps -a
+```
+
+Close and delete all currently running Docker containers:
+
+```bash
+docker rm -f $(docker ps -aq)
+```
+
+### Download and launch Docker container
+
+```bash
+docker pull stevemclaugh/audio-ml-notebook
+
+docker run -it --name audio_ml_notebook -p 8888:8888 -v ~/Desktop/sharedfolder:/home/sharedfolder stevemclaugh/audio-ml-notebook
+```
+
+You can view the Dockerfile we're using for this course [here](https://github.com/stevemclaugh/audio-ml-notebook/blob/master/Dockerfile).
+
+A general introduction to Docker: [Docker for Beginners](https://prakhar.me/docker-curriculum/).
+
+
+### Group notepad for sharing text snippets
+
+- [https://docs.google.com/document/d/1IXeOAQRcUsu5AH656BhnlXWoFgDZY168hhqjZ8BGbxI/edit](Group Google Doc)
 
 
 ## Software to Install Before Class
@@ -53,31 +89,6 @@
 - OpenOffice (if you don't have a copy of Excel)
     - https://www.openoffice.org/download/
 
-## Handy Docker commands
-
-View currently running docker containers:
-
-```bash
-docker ps -a
-```
-
-Close and delete all currently running Docker containers:
-
-```bash
-docker rm -f $(docker ps -aq)
-```
-
-### Download and launch Docker container
-
-```bash
-docker pull stevemclaugh/audio-ml-notebook
-
-docker run -it --name audio_ml_notebook -p 8888:8888 -v ~/Desktop/sharedfolder:/home/sharedfolder stevemclaugh/audio-ml-notebook
-```
-
-You can view the Dockerfile we're using for this course [here](https://github.com/stevemclaugh/audio-ml-notebook/blob/master/Dockerfile).
-
-A general introduction to Docker: [Docker for Beginners](https://prakhar.me/docker-curriculum/).
 
 ## Further reading
 
